@@ -19,3 +19,4 @@ language:
     proof: 'Preuve. '
     remark: 'Remarque. '
     solution: 'Solution. '
+output_dir: "docs"
