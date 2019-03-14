@@ -1,0 +1,21 @@
+book_filename: "coursProbaStats"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapitre "
+    edit: Éditer
+  label:
+    fig: 'Figure '
+    tab: 'Table '
+    eq: 'Équation '
+    thm: 'Théorème '
+    lem: 'Lemme '
+    cor: 'Corollaire '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Définition '
+    exm: 'Exemple '
+    exr: 'Exercice '
+    proof: 'Preuve. '
+    remark: 'Remarque. '
+    solution: 'Solution. '

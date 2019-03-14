@@ -1,0 +1,16 @@
+---
+title: "Probabilités et statistiques"
+author: "Pierre-Damien Olive"
+date: "Mis à jour le `r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Ce document fournit des éléments en probabilités et statistiques, illustrés en R."
+---
+
+# Introduction
+
+Markdown permet plein de mises en forme, en **gras** ou en _italique_. On peut également faire des formules ($E = mc^2$).
+
