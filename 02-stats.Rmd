@@ -1,3 +1,5 @@
 # (PART) Statistiques {-}
 
 # Modèle linéaire
+
+# References
