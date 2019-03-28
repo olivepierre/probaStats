@@ -2,7 +2,7 @@
 
 # Rappels de probabilités
 
-On fait des probabilités avec $\mathbb{P}$.
+On fait des probabilités avec $\mathbb{P}$, pas avec $\mathbf{Q}$.
 
 ## début des rappels
 
