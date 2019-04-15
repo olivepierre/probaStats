@@ -8,7 +8,7 @@ set -e
 git config --global user.email "olivepierre@gmail.com"
 git config --global user.name "Pierre Olive"
 
-git clone https://${TRAVIS_CI_TOKEN}@github.com/probaStats.git book-output
+git clone https://${TRAVIS_CI_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-output
 cd book-output
 cp -r ../docs/* ./
 git add --all *
