@@ -8,9 +8,9 @@ set -e
 git config --global user.email "olivepierre@gmail.com"
 git config --global user.name "Pierre Olive"
 
-git clone -b gh-pages https://${TRAVIS_CI_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+git clone https://${TRAVIS_CI_TOKEN}@github.com/probaStats.git book-output
 cd book-output
-cp -r ../_book/* ./
+cp -r ../docs/* ./
 git add --all *
-git commit -m"Update the book" || true
-git push -q origin gh-pages
+git commit -m"Reconstruction du livre" || true
+git push -q origin master
