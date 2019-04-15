@@ -13,7 +13,7 @@ deploy:
   github_token: $TRAVIS_CI_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
-    branch: gh-pages
+    branch: master
    
 sudo: false
 
