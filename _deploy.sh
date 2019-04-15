@@ -12,5 +12,5 @@ git clone https://${TRAVIS_CI_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-out
 cd book-output
 cp -r ../docs/* ./
 git add --all *
-git commit -m"Reconstruction du livre" || true
+git commit -m "Reconstruction du livre" || true
 git push -q origin gh-pages
