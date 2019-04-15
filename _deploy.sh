@@ -13,4 +13,4 @@ cd book-output
 cp -r ../docs/* ./
 git add --all *
 git commit -m"Reconstruction du livre" || true
-git push -q origin master
+git push -q origin gh-pages
