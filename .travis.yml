@@ -1,11 +1,10 @@
 language: r
 pandoc_version: 1.19.2.1
 
-before_script:
-  - chmod +x ./_build.sh
-
 script:
-  - ./_build.sh
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+  Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 
 deploy:
   provider: pages
