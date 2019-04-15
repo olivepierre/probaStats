@@ -1,7 +1,0 @@
-[
-["index.html", "Probabilités et statistiques Chapitre 1 Introduction", " Probabilités et statistiques Pierre-Damien Olive Mis à jour le 2019-03-14 Chapitre 1 Introduction Markdown permet plein de mises en forme, en gras ou en italique. On peut également faire des formules (\\(E = mc^2\\)). "],
-["rappels-de-probabilites.html", "Chapitre 2 Rappels de probabilités 2.1 début des rappels 2.2 fin des rappels", " Chapitre 2 Rappels de probabilités On fait des probabilités avec \\(\\mathbb{P}\\). 2.1 début des rappels 2.2 fin des rappels 2.2.1 rappels 1 2.2.2 rappels 2 r1 r2 r21 r22 A B C "],
-["tests-avec-des-matrices.html", "Chapitre 3 tests avec des matrices", " Chapitre 3 tests avec des matrices \\[X = \\begin{bmatrix}1 &amp; x_{1}\\\\ 1 &amp; x_{2}\\\\ 1 &amp; x_{3} \\end{bmatrix}\\] \\[\\begin{equation} f\\left(k\\right) = \\binom{n}{k} p^k\\left(1-p\\right)^{n-k} \\tag{3.1} \\end{equation}\\] C’est l’équation (3.1) Théorème 3.1 Je fais mon théorème "],
-["modele-lineaire.html", "Chapitre 4 Modèle linéaire", " Chapitre 4 Modèle linéaire "],
-["transformee-de-laplace.html", "A Transformée de Laplace", " A Transformée de Laplace "]
-]
