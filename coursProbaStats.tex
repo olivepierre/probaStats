@@ -21,7 +21,6 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Probabilités et statistiques},
@@ -85,7 +84,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{Mis à jour le 2019-04-15}
+    \date{Mis à jour le 2019-06-16}
 
 \usepackage{booktabs}
 
@@ -102,8 +101,8 @@
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercice}[chapter]
 \theoremstyle{remark}
-\newtheorem*{remark}{Remarque}
-\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remarque }
+\newtheorem*{solution}{Solution }
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
@@ -112,85 +111,142 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\chapter*{Introduction}\label{introduction}}
+\addcontentsline{toc}{chapter}{Introduction}
 
-Le site avec la dernière version du cours est disponible sur :
-\url{https://olivepierre.github.io/probaStats/} Markdown permet plein de
-mises en forme, en \textbf{gras} ou en \emph{italique}. On peut
-également faire des formules (\(E = mc^2\)).
+Le site avec la dernière version du cours est disponible sur : \url{https://olivepierre.github.io/probaStats/}
 
-\part{Probabilités}\label{part-probabilites}
+\hypertarget{part-probabilites}{%
+\part{Probabilités}\label{part-probabilites}}
 
-\chapter{Rappels de probabilités}\label{rappels-de-probabilites}
+\hypertarget{evenements-et-probabilites}{%
+\chapter{Évènements et probabilités}\label{evenements-et-probabilites}}
 
-On fait des probabilités avec \(\mathbb{P}\), pas avec \(\mathbf{Q}\).
+\hypertarget{evenements}{%
+\section{Évènements}\label{evenements}}
 
-\section{début des rappels}\label{debut-des-rappels}
+\hypertarget{probabilites}{%
+\section{Probabilités}\label{probabilites}}
 
-\section{fin des rappels}\label{fin-des-rappels}
+\hypertarget{probabilites-conditionnelles}{%
+\section{Probabilités conditionnelles}\label{probabilites-conditionnelles}}
 
-\subsection{rappels 1}\label{rappels-1}
+\hypertarget{independance}{%
+\section{Indépendance}\label{independance}}
 
-\subsection{rappels 2}\label{rappels-2}
+\hypertarget{variables-aleatoires}{%
+\chapter{Variables aléatoires}\label{variables-aleatoires}}
 
-\begin{itemize}
-\tightlist
-\item
-  r1
-\item
-  r2
+\hypertarget{variables-aleatoires-1}{%
+\section{Variables aléatoires}\label{variables-aleatoires-1}}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    r21
-  \item
-    r22
-  \end{itemize}
-\end{itemize}
+\hypertarget{variables-discretes-et-continues}{%
+\section{Variables discrètes et continues}\label{variables-discretes-et-continues}}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  A
-\item
-  B
-\item
-  C
-\end{enumerate}
+\hypertarget{vecteurs-aleatoires}{%
+\section{Vecteurs aléatoires}\label{vecteurs-aleatoires}}
 
-\chapter{tests avec des matrices}\label{tests-avec-des-matrices}
+\hypertarget{variables-aleatoires-discretes}{%
+\chapter{Variables aléatoires discrètes}\label{variables-aleatoires-discretes}}
 
-\[X = \begin{bmatrix}1 & x_{1}\\
-1 & x_{2}\\
-1 & x_{3}
-\end{bmatrix}\]
+\hypertarget{fonctions-de-masse}{%
+\section{Fonctions de masse}\label{fonctions-de-masse}}
 
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation}
+\BeginKnitrBlock{definition}
+\protect\hypertarget{def:unnamed-chunk-1}{}{\label{def:unnamed-chunk-1} }La \textbf{fonction de masse} d'une variable aléatoire discrète \(X\) est la fonction \(f : \mathbb{R} \mapsto \left[0 ,1 \right]\) définie par:
+\[
+f(x) = \mathbb{P}(X=x) .
+\]
+\EndKnitrBlock{definition}
 
-C'est l'équation \eqref{eq:binom}
+Fonctions de répartitions et fonctions de masse sont reliées par les relations:
+\[
+F(x) = \sum_{x_i \leq x} f(x_i) ; f(x) = F(x) - F(x^{-}) .
+\]
+
+\BeginKnitrBlock{lemma}
+\protect\hypertarget{lem:unnamed-chunk-2}{}{\label{lem:unnamed-chunk-2} }Une fonction \(f : \mathbb{R} \mapsto \left[0 ,1 \right]\) est une fonction de masse si et seulement si l'ensemble \(\lbrace x : f(x) >0 \rbrace\) est dénombrable et \(\sum_{i} f(x_i) = 1\), où les \(x_1, \ldots, x_n, \ldots\) sont les valeurs de \(x\) tel que \(f(x)>0\).
+\EndKnitrBlock{lemma}
+
+TODO : exemples du programme
+
+\hypertarget{independance-1}{%
+\section{Indépendance}\label{independance-1}}
+
+\BeginKnitrBlock{definition}
+\protect\hypertarget{def:unnamed-chunk-3}{}{\label{def:unnamed-chunk-3} }Deux variables aléatoires discrètes \(X\) et \(Y\) sont \textbf{indépendantes} si les évènements \(\lbrace X=x \rbrace\) et \(\lbrace Y=y \rbrace\) sont indépendants pour tout \(x\) et \(y\) :
+\[\mathbb{P}(X=x,Y=y) = \mathbb{P}(X=x) \mathbb{P}(Y=y) .\]\\
+On peut étendre cette définition à un ensemble de variables aléatoires \((X_i)_{i \in I}\).Dans ce cas, l'égalité ci-dessus devient:
+\[ \mathbb{P}(X_i = x_i \forall i \in J) = \prod_{i \in J} \mathbb{P}(X_i = x_i)\]
+pour toute partie finie \(J\) de \(I\)
+\EndKnitrBlock{definition}
 
 \BeginKnitrBlock{theorem}
-\protect\hypertarget{thm:unnamed-chunk-1}{}{\label{thm:unnamed-chunk-1} }Je
-fais mon théorème
+\protect\hypertarget{thm:unnamed-chunk-4}{}{\label{thm:unnamed-chunk-4} }Soient \(X,Y\) deux variables aléatoires discrètes indépendantes, \(f,g\) deux fonctions réelles. Alors les variables aléatoires discrètes \(f(X)\) et \(g(Y)\) sont encore indépendantes.
 \EndKnitrBlock{theorem}
 
-\part{Statistiques}\label{part-statistiques}
+\hypertarget{esperance}{%
+\section{Espérance}\label{esperance}}
 
-\chapter{Modèle linéaire}\label{modele-lineaire}
+\BeginKnitrBlock{definition}
+\protect\hypertarget{def:unnamed-chunk-5}{}{\label{def:unnamed-chunk-5} }L'\textbf{espérance} d'une variables aléatoire discrète \(X\) avec une fonction de masse \(f\) est définie comme
+\[ \mathbb{E} X = \sum_{x : f(x)>0} x f(x) \]
+lorsque cette somme est \emph{absolument} convergente; la convergence absolue est requise afin que cette somme ait une même valeur quelque soit l'ordre dans lequel on somme les \(x\) (cf.~cours analyse sur les familles sommables).
+\EndKnitrBlock{definition}
 
-\chapter{References}\label{references}
+En particulier, lorsque \(A\) est un évènement, on a
+\[\mathbb{E} \mathbf{1}_A = \mathbb{P}(A).\]
 
-\appendix
+Afin de calculer les espérances de fonctions de variables aléatoires, on peut envisager de calculer la fonction de masse de cette nouvelle variable aléatoire. Cette approche est délicate et peu pertinente grâce au lemme:
+\BeginKnitrBlock{lemma}
+\protect\hypertarget{lem:unnamed-chunk-6}{}{\label{lem:unnamed-chunk-6} }Soit \(X\) une variable aléatoire discrète, \(f\) sa fonction de masse. Soit \(g\) une fonction réelle. Alors l'espérance de \(g(X)\) est définie par
+\[
+\mathbb{E} g(X) = \sum_{x} g(x) f(x)
+\]
+lorsque cette somme est absolument convergente.
+\EndKnitrBlock{lemma}
 
+On peut ainsi calculer les moments pour tout ordre (\(m_k = \mathbb{E} X^k\)) ainsi que les moments centrés (\(\sigma_k = \mathbb{E} (X - m_1)^k\)). En particulier, on définit :
+\BeginKnitrBlock{definition}
+\protect\hypertarget{def:unnamed-chunk-7}{}{\label{def:unnamed-chunk-7} } Le moment d'ordre 1 s'appelle l'espérance de \(X\), le moment centré d'ordre 2 de \(X\) s'appelle la variance de \(X\) (notée \(\mathbb{V}X\)) : c'est une quantité positive!
+On appelle \(\sigma = \sqrt{\sigma_2}\) l'écart-type de \(X\).
+\EndKnitrBlock{definition}
 
-\chapter{Transformée de Laplace}\label{transformee-de-laplace}
+\BeginKnitrBlock{lemma}
+\protect\hypertarget{lem:unnamed-chunk-8}{}{\label{lem:unnamed-chunk-8} }On peut exprimer les moments centrés en fonction de moments d'ordres inférieurs ; en particulier,
+\[\sigma_2 = m_2 - m_1^2 \]
+\EndKnitrBlock{lemma}
 
-\chapter{References}\label{references-1}
+\BeginKnitrBlock{theorem}
+\protect\hypertarget{thm:unnamed-chunk-9}{}{\label{thm:unnamed-chunk-9} }L'opérateur \$ \mathbb{E} \$ est une forme linéaire ( pour \$ \lambda \in \mathbb{R} \$,
+\$ X,Y \$ deux variables aléatoires admettant une espérance,
+\$ \mathbb{E} (X+\lambda Y) = \mathbb{X} + \lambda \mathbb{E} Y \(), positive (\) X \geq 0\$ entraine \(\mathbb{E}X \geq 0\)) vérifiant \(\mathbb{E}1 = 1\).
+\EndKnitrBlock{theorem}
+
+Par contre, il n'est pas vrai (en général) que \[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]
+
+\BeginKnitrBlock{lemma}
+\protect\hypertarget{lem:unnamed-chunk-10}{}{\label{lem:unnamed-chunk-10} }Si \(X,Y\) sont des variables aléatoires indépendantes, alors
+\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]
+\EndKnitrBlock{lemma}
+
+\BeginKnitrBlock{definition}
+\protect\hypertarget{def:unnamed-chunk-11}{}{\label{def:unnamed-chunk-11} }On dit que les variables aléatoires \(X,Y\) sont \textbf{non corrélées} si \[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]
+\EndKnitrBlock{definition}
+
+Ainsi, les variables indépendantes sont non-corrélées, mais l'inverse n'est pas vrai !
+
+\BeginKnitrBlock{theorem}
+\protect\hypertarget{thm:unnamed-chunk-12}{}{\label{thm:unnamed-chunk-12} }Soient \(X,Y\) deux variables aléatoires, \(\lambda \in \mathbb{R}\). Alors \(\mathbb{V} \lambda X = \lambda^2 \mathbb{V}X\) et \(\mathbb{V}(X+Y) = \mathbb{V}X+\mathbb{V}Y\) si ces variables sont non-corrélées.
+\EndKnitrBlock{theorem}
+
+\hypertarget{part-statistiques}{%
+\part{Statistiques}\label{part-statistiques}}
+
+\hypertarget{appendix-annexes}{%
+\appendix}
+
 
 \bibliography{book.bib,packages.bib}
 

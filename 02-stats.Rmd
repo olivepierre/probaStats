@@ -1,5 +1,9 @@
 # (PART) Statistiques {-}
 
-# Modèle linéaire
+<!-- # Modèle linéaire -->
 
-# References
+<!-- On peut ajouter des blocs (cf https://github.com/rstudio/bookdown/blob/master/inst/examples/css/style.css +  https://github.com/rstudio/bookdown/blob/master/inst/examples/02-components.Rmd) -->
+
+<!-- il faut penser à modifier le css -->
+
+<!-- # Références -->

@@ -1,5 +1,5 @@
 # (APPENDIX) Annexes {-}
 
-# Transformée de Laplace
+<!-- # Transformée de Laplace -->
 
-# References
+<!-- # Autres annexes -->

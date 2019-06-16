@@ -8,9 +8,8 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "Ce document fournit des éléments en probabilités et statistiques, illustrés en R."
+
 ---
 
-# Introduction
+# Introduction  {-}
 Le site avec la dernière version du cours est disponible sur : https://olivepierre.github.io/probaStats/
-Markdown permet plein de mises en forme, en **gras** ou en _italique_. On peut également faire des formules ($E = mc^2$).
-

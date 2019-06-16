@@ -1,3 +1,21 @@
+---
+title: "Probabilités et statistiques"
+author: "Pierre-Damien Olive"
+date: "Mis à jour le `r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Ce document fournit des éléments en probabilités et statistiques, illustrés en R."
+
+---
+
+# Introduction  {-}
+Le site avec la dernière version du cours est disponible sur : https://olivepierre.github.io/probaStats/
+
+<!--chapter:end:index.Rmd-->
+
 # (PART) Probabilités {-} 
 
 # Évènements et probabilités
@@ -105,4 +123,33 @@ Soient $X,Y$ deux variables aléatoires, $\lambda \in \mathbb{R}$. Alors $\mathb
 ```
 
 
+
+
+<!--chapter:end:01-proba.Rmd-->
+
+# (PART) Statistiques {-}
+
+<!-- # Modèle linéaire -->
+
+<!-- On peut ajouter des blocs (cf https://github.com/rstudio/bookdown/blob/master/inst/examples/css/style.css +  https://github.com/rstudio/bookdown/blob/master/inst/examples/02-components.Rmd) -->
+
+<!-- il faut penser à modifier le css -->
+
+<!-- # Références -->
+
+<!--chapter:end:02-stats.Rmd-->
+
+# (APPENDIX) Annexes {-}
+
+<!-- # Transformée de Laplace -->
+
+<!-- # Autres annexes -->
+
+<!--chapter:end:03-annexe.Rmd-->
+
+<!-- `r if (knitr:::is_html_output()) ' -->
+<!-- # Références {-} -->
+<!-- '` -->
+
+<!--chapter:end:09-references.Rmd-->
 

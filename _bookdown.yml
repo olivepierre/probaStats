@@ -16,7 +16,7 @@ language:
     def: 'Définition '
     exm: 'Exemple '
     exr: 'Exercice '
-    proof: 'Preuve. '
-    remark: 'Remarque. '
-    solution: 'Solution. '
+    proof: 'Preuve '
+    remark: 'Remarque '
+    solution: 'Solution '
 output_dir: "docs"
