@@ -87,7 +87,8 @@ L'opérateur $ \mathbb{E} $ est une forme linéaire ( pour $ \lambda \in \mathbb
 $ X,Y $ deux variables aléatoires admettant une espérance,
 $ \mathbb{E} (X+\lambda Y) = \mathbb{X} + \lambda \mathbb{E} Y $), positive ($ X \geq 0$ entraine $\mathbb{E}X \geq 0$) vérifiant $\mathbb{E}1 = 1$.
 ```
-Par contre, il n'est pas vrai (en général) que $$ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . $$
+Par contre, il n'est pas vrai (en général) que 
+$$\mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . $$
 
 ```{lemma}
 Si $X,Y$ sont des variables aléatoires indépendantes, alors 
