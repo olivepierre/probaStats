@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 3 Variables aléatoires discrètes | Probabilités et statistiques</title>
+  <meta name="description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
+  <meta name="generator" content="bookdown 0.11.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 3 Variables aléatoires discrètes | Probabilités et statistiques" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 3 Variables aléatoires discrètes | Probabilités et statistiques" />
+  
+  <meta name="twitter:description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
+  
+
+<meta name="author" content="Pierre-Damien Olive" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variables-aleatoires.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="part"><span><b>I Probabilités</b></span></li>
+<li class="chapter" data-level="1" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html"><i class="fa fa-check"></i><b>1</b> Évènements et probabilités</a><ul>
+<li class="chapter" data-level="1.1" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#evenements"><i class="fa fa-check"></i><b>1.1</b> Évènements</a></li>
+<li class="chapter" data-level="1.2" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#probabilites"><i class="fa fa-check"></i><b>1.2</b> Probabilités</a></li>
+<li class="chapter" data-level="1.3" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#probabilites-conditionnelles"><i class="fa fa-check"></i><b>1.3</b> Probabilités conditionnelles</a></li>
+<li class="chapter" data-level="1.4" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#independance"><i class="fa fa-check"></i><b>1.4</b> Indépendance</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html"><i class="fa fa-check"></i><b>2</b> Variables aléatoires</a><ul>
+<li class="chapter" data-level="2.1" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html#variables-aleatoires-1"><i class="fa fa-check"></i><b>2.1</b> Variables aléatoires</a></li>
+<li class="chapter" data-level="2.2" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html#variables-discretes-et-continues"><i class="fa fa-check"></i><b>2.2</b> Variables discrètes et continues</a></li>
+<li class="chapter" data-level="2.3" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html#vecteurs-aleatoires"><i class="fa fa-check"></i><b>2.3</b> Vecteurs aléatoires</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html"><i class="fa fa-check"></i><b>3</b> Variables aléatoires discrètes</a><ul>
+<li class="chapter" data-level="3.1" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#fonctions-de-masse"><i class="fa fa-check"></i><b>3.1</b> Fonctions de masse</a></li>
+<li class="chapter" data-level="3.2" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#independance-1"><i class="fa fa-check"></i><b>3.2</b> Indépendance</a></li>
+<li class="chapter" data-level="3.3" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#esperance"><i class="fa fa-check"></i><b>3.3</b> Espérance</a></li>
+</ul></li>
+<li class="part"><span><b>II Statistiques</b></span></li>
+<li class="appendix"><span><b>Annexes</b></span></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probabilités et statistiques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="variables-aleatoires-discretes" class="section level1">
+<h1><span class="header-section-number">Chapitre 3</span> Variables aléatoires discrètes</h1>
+<div id="fonctions-de-masse" class="section level2">
+<h2><span class="header-section-number">3.1</span> Fonctions de masse</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-1" class="definition"><strong>Définition 3.1  </strong></span>La <strong>fonction de masse</strong> d’une variable aléatoire discrète <span class="math inline">\(X\)</span> est la fonction <span class="math inline">\(f : \mathbb{R} \mapsto \left[0 ,1 \right]\)</span> définie par: <span class="math display">\[
+f(x) = \mathbb{P}(X=x) .
+\]</span>
+</div>
+<p> Fonctions de répartitions et fonctions de masse sont reliées par les relations: <span class="math display">\[
+F(x) = \sum_{x_i \leq x} f(x_i) ; f(x) = F(x) - F(x^{-}) .
+\]</span></p>
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-2" class="lemma"><strong>Lemme 3.1  </strong></span>Une fonction <span class="math inline">\(f : \mathbb{R} \mapsto \left[0 ,1 \right]\)</span> est une fonction de masse si et seulement si l’ensemble <span class="math inline">\(\lbrace x : f(x) &gt;0 \rbrace\)</span> est dénombrable et <span class="math inline">\(\sum_{i} f(x_i) = 1\)</span>, où les <span class="math inline">\(x_1, \ldots, x_n, \ldots\)</span> sont les valeurs de <span class="math inline">\(x\)</span> tel que <span class="math inline">\(f(x)&gt;0\)</span>.
+</div>
+<p> TODO : exemples du programme</p>
+</div>
+<div id="independance-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Indépendance</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-3" class="definition"><strong>Définition 3.2  </strong></span>Deux variables aléatoires discrètes <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont <strong>indépendantes</strong> si les évènements <span class="math inline">\(\lbrace X=x \rbrace\)</span> et <span class="math inline">\(\lbrace Y=y \rbrace\)</span> sont indépendants pour tout <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> : <span class="math display">\[\mathbb{P}(X=x,Y=y) = \mathbb{P}(X=x) \mathbb{P}(Y=y) .\]</span><br />
+On peut étendre cette définition à un ensemble de variables aléatoires <span class="math inline">\((X_i)_{i \in I}\)</span>.Dans ce cas, l’égalité ci-dessus devient: <span class="math display">\[ \mathbb{P}(X_i = x_i \forall i \in J) = \prod_{i \in J} \mathbb{P}(X_i = x_i)\]</span> pour toute partie finie <span class="math inline">\(J\)</span> de <span class="math inline">\(I\)</span>
+</div>
+ 
+<div class="theorem">
+<span id="thm:unnamed-chunk-4" class="theorem"><strong>Théorème 3.1  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes indépendantes, <span class="math inline">\(f,g\)</span> deux fonctions réelles. Alors les variables aléatoires discrètes <span class="math inline">\(f(X)\)</span> et <span class="math inline">\(g(Y)\)</span> sont encore indépendantes.
+</div>
+
+</div>
+<div id="esperance" class="section level2">
+<h2><span class="header-section-number">3.3</span> Espérance</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-5" class="definition"><strong>Définition 3.3  </strong></span>L’<strong>espérance</strong> d’une variables aléatoire discrète <span class="math inline">\(X\)</span> avec une fonction de masse <span class="math inline">\(f\)</span> est définie comme <span class="math display">\[ \mathbb{E} X = \sum_{x : f(x)&gt;0} x f(x) \]</span> lorsque cette somme est <em>absolument</em> convergente; la convergence absolue est requise afin que cette somme ait une même valeur quelque soit l’ordre dans lequel on somme les <span class="math inline">\(x\)</span> (cf. cours analyse sur les familles sommables).
+</div>
+<p> En particulier, lorsque <span class="math inline">\(A\)</span> est un évènement, on a <span class="math display">\[\mathbb{E} \mathbf{1}_A = \mathbb{P}(A).\]</span></p>
+Afin de calculer les espérances de fonctions de variables aléatoires, on peut envisager de calculer la fonction de masse de cette nouvelle variable aléatoire. Cette approche est délicate et peu pertinente grâce au lemme: 
+<div class="lemma">
+<span id="lem:unnamed-chunk-6" class="lemma"><strong>Lemme 3.2  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire discrète, <span class="math inline">\(f\)</span> sa fonction de masse. Soit <span class="math inline">\(g\)</span> une fonction réelle. Alors l’espérance de <span class="math inline">\(g(X)\)</span> est définie par <span class="math display">\[
+\mathbb{E} g(X) = \sum_{x} g(x) f(x)
+\]</span> lorsque cette somme est absolument convergente.
+</div>
+
+On peut ainsi calculer les moments pour tout ordre (<span class="math inline">\(m_k = \mathbb{E} X^k\)</span>) ainsi que les moments centrés (<span class="math inline">\(\sigma_k = \mathbb{E} (X - m_1)^k\)</span>). En particulier, on définit : 
+<div class="definition">
+<span id="def:unnamed-chunk-7" class="definition"><strong>Définition 3.4  </strong></span> Le moment d’ordre 1 s’appelle l’espérance de <span class="math inline">\(X\)</span>, le moment centré d’ordre 2 de <span class="math inline">\(X\)</span> s’appelle la variance de <span class="math inline">\(X\)</span> (notée <span class="math inline">\(\mathbb{V}X\)</span>) : c’est une quantité positive! On appelle <span class="math inline">\(\sigma = \sqrt{\sigma_2}\)</span> l’écart-type de <span class="math inline">\(X\)</span>.
+</div>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-8" class="lemma"><strong>Lemme 3.3  </strong></span>On peut exprimer les moments centrés en fonction de moments d’ordres inférieurs ; en particulier, <span class="math display">\[\sigma_2 = m_2 - m_1^2 \]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-9" class="theorem"><strong>Théorème 3.2  </strong></span>L’opérateur $  $ est une forme linéaire ( pour $  $, $ X,Y $ deux variables aléatoires admettant une espérance, $  (X+Y) =  +  Y <span class="math inline">\(), positive (\)</span> X 0$ entraine <span class="math inline">\(\mathbb{E}X \geq 0\)</span>) vérifiant <span class="math inline">\(\mathbb{E}1 = 1\)</span>.
+</div>
+<p> Par contre, il n’est pas vrai (en général) que <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span></p>
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-10" class="lemma"><strong>Lemme 3.4  </strong></span>Si <span class="math inline">\(X,Y\)</span> sont des variables aléatoires indépendantes, alors <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-11" class="definition"><strong>Définition 3.5  </strong></span>On dit que les variables aléatoires <span class="math inline">\(X,Y\)</span> sont <strong>non corrélées</strong> si <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span>
+</div>
+<p> Ainsi, les variables indépendantes sont non-corrélées, mais l’inverse n’est pas vrai !</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-12" class="theorem"><strong>Théorème 3.3  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires, <span class="math inline">\(\lambda \in \mathbb{R}\)</span>. Alors <span class="math inline">\(\mathbb{V} \lambda X = \lambda^2 \mathbb{V}X\)</span> et <span class="math inline">\(\mathbb{V}(X+Y) = \mathbb{V}X+\mathbb{V}Y\)</span> si ces variables sont non-corrélées.
+</div>
+
+
+</div>
+</div>
+
+
+
+<!-- On peut ajouter des blocs (cf https://github.com/rstudio/bookdown/blob/master/inst/examples/css/style.css +  https://github.com/rstudio/bookdown/blob/master/inst/examples/02-components.Rmd) -->
+<!-- il faut penser à modifier le css -->
+<!-- # Références -->
+
+</div>
+
+
+
+<!-- # Autres annexes -->
+
+<!--  -->
+<!-- # Références {-} -->
+<!--  -->
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variables-aleatoires.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["coursProbaStats.pdf", "coursProbaStats.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
