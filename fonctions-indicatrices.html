@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilités et statistiques</title>
+  <title>B Fonctions indicatrices | Probabilités et statistiques</title>
   <meta name="description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
   <meta name="generator" content="bookdown 0.11.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilités et statistiques" />
+  <meta property="og:title" content="B Fonctions indicatrices | Probabilités et statistiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilités et statistiques" />
+  <meta name="twitter:title" content="B Fonctions indicatrices | Probabilités et statistiques" />
   
   <meta name="twitter:description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="techniques-de-denombrement-en-probabilite.html">
 
-<link rel="next" href="evenements-et-probabilites.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -103,26 +103,36 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilités et statistiques</h1>
-<p class="author"><em>Pierre-Damien Olive</em></p>
-<p class="date"><em>Mis à jour le 2019-06-17</em></p>
+<div id="fonctions-indicatrices" class="section level1">
+<h1><span class="header-section-number">B</span> Fonctions indicatrices</h1>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-30" class="theorem"><strong>Théorème B.1  </strong></span>L’application qui a un évènement <span class="math inline">\(A\)</span> associe la fonction indicatrice <span class="math display">\[
+\mathbf{1}_A : x \to  
+\left\lbrace
+\begin{array}{ccc}
+1  &amp; \mbox{si} &amp; x\in A\\
+0 &amp; \mbox{si} &amp; x \notin A\\
+\end{array}\right.
+\]</span> est bijective. En outre, si <span class="math inline">\(A,B\)</span> sont deux évènements disjoints, on a: <span class="math display">\[\mathbf{1}_{A \cup B} = \mathbf{1}_A+ \mathbf{1}_B.\]</span> Par ailleurs, <span class="math display">\[ \mathbf{1}_{A^c} = 1- \mathbf{1}_A.\]</span></p>
+Enfin, si <span class="math inline">\(A,B\)</span> sont deux évènements, <span class="math display">\[
+\mathbf{1}_{A \cap B} = \mathbf{1}_A \mathbf{1}_B.\]</span>
 </div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>Le site avec la dernière version du cours est disponible sur : <a href="https://olivepierre.github.io/probaStats/" class="uri">https://olivepierre.github.io/probaStats/</a></p>
+<p> Cet outil permet (entre autres) une démonstration immédiate de l’égalité de Poincaré (formule d’inclusion-exclusion) : Si <span class="math inline">\(B = \bigcup_{i=1}^n A_i\)</span>, <span class="math display">\[\mathbf{1}_B =1- \prod_{i=1}^n (1-\mathbf{1}_{A_i})\]</span> Et en développant puis en prenant l’espérance, il vient: <span class="math display">\[\mathbb{P}(B) = \sum_i \mathbb{P}(A_i) - \sum_{i&lt;j} \mathbb{P}(A_i \cap A_j)+  \ldots  \]</span> <!-- # Transformée de Laplace --></p>
+<!-- # Autres annexes -->
+
+<!--  -->
+<!-- # Références {-} -->
+<!--  -->
 
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
+<a href="techniques-de-denombrement-en-probabilite.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="evenements-et-probabilites.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

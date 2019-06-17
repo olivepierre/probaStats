@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="variables-aleatoires.html">
-
+<link rel="next" href="techniques-de-denombrement-en-probabilite.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -79,9 +79,13 @@
 <li class="chapter" data-level="3.1" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#fonctions-de-masse"><i class="fa fa-check"></i><b>3.1</b> Fonctions de masse</a></li>
 <li class="chapter" data-level="3.2" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#independance-1"><i class="fa fa-check"></i><b>3.2</b> Indépendance</a></li>
 <li class="chapter" data-level="3.3" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#esperance"><i class="fa fa-check"></i><b>3.3</b> Espérance</a></li>
+<li class="chapter" data-level="3.4" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#cas-particuliers-de-variables-discretes-aleatoires"><i class="fa fa-check"></i><b>3.4</b> Cas particuliers de variables discrètes aléatoires</a></li>
+<li class="chapter" data-level="3.5" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#dependance"><i class="fa fa-check"></i><b>3.5</b> Dépendance</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
+<li class="chapter" data-level="A" data-path="techniques-de-denombrement-en-probabilite.html"><a href="techniques-de-denombrement-en-probabilite.html"><i class="fa fa-check"></i><b>A</b> Techniques de dénombrement en probabilité</a></li>
+<li class="chapter" data-level="B" data-path="fonctions-indicatrices.html"><a href="fonctions-indicatrices.html"><i class="fa fa-check"></i><b>B</b> Fonctions indicatrices</a></li>
 </ul>
 
       </nav>
@@ -116,18 +120,54 @@ F(x) = \sum_{x_i \leq x} f(x_i) ; f(x) = F(x) - F(x^{-}) .
 <div class="lemma">
 <span id="lem:unnamed-chunk-2" class="lemma"><strong>Lemme 3.1  </strong></span>Une fonction <span class="math inline">\(f : \mathbb{R} \mapsto \left[0 ,1 \right]\)</span> est une fonction de masse si et seulement si l’ensemble <span class="math inline">\(\lbrace x : f(x) &gt;0 \rbrace\)</span> est dénombrable et <span class="math inline">\(\sum_{i} f(x_i) = 1\)</span>, où les <span class="math inline">\(x_1, \ldots, x_n, \ldots\)</span> sont les valeurs de <span class="math inline">\(x\)</span> tel que <span class="math inline">\(f(x)&gt;0\)</span>.
 </div>
-<p> TODO : exemples du programme</p>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-3" class="example"><strong>Exemple 3.1  </strong></span>On choisit un nombre entier entre <span class="math inline">\(1\)</span> et <span class="math inline">\(n\)</span>, de façon équiprobable. Un tel choix définit une variable aléatoire discrète, de loi uniforme.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-4" class="example"><strong>Exemple 3.2  </strong></span>On lance une pièce <span class="math inline">\(n\)</span> fois, et on tombe sur pile avec une probabilité <span class="math inline">\(p\)</span>. L’ensemble des évènements est <span class="math inline">\(\Omega = \lbrace \mbox{pile}, \mbox{face} \rbrace\)</span>. Le nombre de fois que l’on obtient “pile” est une variable aléatoire discrète dont la fonction de masse vérifie: <span class="math display">\[
+  f(x) = \left\lbrace
+\begin{array}{ccc}
+0  &amp; \mbox{si} &amp; x\notin \lbrace 0, \ldots , n \rbrace\\
+\binom{n}{k} p^k (1-p)^{n-k} &amp; \mbox{sinon} &amp;\\
+\end{array}\right.
+\]</span> On dit que cette variable aléatoire suit une loi binômiale (notée <span class="math inline">\(\mathcal{B}(n,p)\)</span>).<br />
+Lorsque <span class="math inline">\(n=1\)</span>, on dit que la variable aléatoire suit une loi de Bernoulli (notée <span class="math inline">\(\mathcal{B}(p)\)</span>).
+</div>
+ 
+<div class="example">
+<span id="exm:unnamed-chunk-5" class="example"><strong>Exemple 3.3  </strong></span>On compte le nombre d’épreuves de Bernoulli nécessaires pour arriver sur “pile” pour la première fois. Ce nombre de lancer est une variables aléatoire discrète, à valeur dans <span class="math inline">\(\mathbb{N}^*\)</span> et de fonction de masse: <span class="math display">\[
+f(k) = (1-p)^{k-1} p \forall k \in \mathbb{N}^*
+\]</span> La loi correspondante s’appelle la loi géométrique, de paramètre <span class="math inline">\(p\)</span>, notée <span class="math inline">\(\mathcal{G}(p)\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-6" class="example"><strong>Exemple 3.4  </strong></span>Une variable aléatoire prenant ses valeurs dans <span class="math inline">\(\mathbb{N}\)</span> avec une fonction de masse <span class="math display">\[
+  f(k) = \frac{\lambda^k}{k!} e^{-\lambda} \forall k \in \mathbb{N}\]</span> suit une loi de Poisson de paramètre <span class="math inline">\(\lambda &gt;0\)</span>, notée <span class="math inline">\(\mathcal{P}(\lambda)\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-7" class="example"><strong>Exemple 3.5  </strong></span>Soit <span class="math inline">\(0&lt;p&lt;1\)</span>. On tire simultanément <span class="math inline">\(n\)</span> boules dans une urne contenant <span class="math inline">\(A\)</span> boules, dont <span class="math inline">\(pA\)</span> gagnantes et <span class="math inline">\((1-p)A\)</span> perdantes. On compte le nombre de boules gagnantes extraites. La loi de cette variable aléatoire discrète est la loi hypergéométrique, de fonction de masse: <span class="math display">\[
+  f(k) = \frac{\binom{pA}{k} \binom{qA}{n-k}}{\binom{A}{n}}
+  \]</span>
+</div>
+
 </div>
 <div id="independance-1" class="section level2">
 <h2><span class="header-section-number">3.2</span> Indépendance</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-3" class="definition"><strong>Définition 3.2  </strong></span>Deux variables aléatoires discrètes <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont <strong>indépendantes</strong> si les évènements <span class="math inline">\(\lbrace X=x \rbrace\)</span> et <span class="math inline">\(\lbrace Y=y \rbrace\)</span> sont indépendants pour tout <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> : <span class="math display">\[\mathbb{P}(X=x,Y=y) = \mathbb{P}(X=x) \mathbb{P}(Y=y) .\]</span><br />
+<span id="def:unnamed-chunk-8" class="definition"><strong>Définition 3.2  </strong></span>Deux variables aléatoires discrètes <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont <strong>indépendantes</strong> si les évènements <span class="math inline">\(\lbrace X=x \rbrace\)</span> et <span class="math inline">\(\lbrace Y=y \rbrace\)</span> sont indépendants pour tout <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> : <span class="math display">\[\mathbb{P}(X=x,Y=y) = \mathbb{P}(X=x) \mathbb{P}(Y=y) .\]</span><br />
 On peut étendre cette définition à un ensemble de variables aléatoires <span class="math inline">\((X_i)_{i \in I}\)</span>.Dans ce cas, l’égalité ci-dessus devient: <span class="math display">\[ \mathbb{P}(X_i = x_i \forall i \in J) = \prod_{i \in J} \mathbb{P}(X_i = x_i)\]</span> pour toute partie finie <span class="math inline">\(J\)</span> de <span class="math inline">\(I\)</span>
 </div>
  
 <div class="theorem">
-<span id="thm:unnamed-chunk-4" class="theorem"><strong>Théorème 3.1  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes indépendantes, <span class="math inline">\(f,g\)</span> deux fonctions réelles. Alors les variables aléatoires discrètes <span class="math inline">\(f(X)\)</span> et <span class="math inline">\(g(Y)\)</span> sont encore indépendantes.
+<span id="thm:unnamed-chunk-9" class="theorem"><strong>Théorème 3.1  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes indépendantes, <span class="math inline">\(f,g\)</span> deux fonctions réelles. Alors les variables aléatoires discrètes <span class="math inline">\(f(X)\)</span> et <span class="math inline">\(g(Y)\)</span> sont encore indépendantes.
 </div>
 
 </div>
@@ -135,44 +175,114 @@ On peut étendre cette définition à un ensemble de variables aléatoires <span
 <h2><span class="header-section-number">3.3</span> Espérance</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-5" class="definition"><strong>Définition 3.3  </strong></span>L’<strong>espérance</strong> d’une variables aléatoire discrète <span class="math inline">\(X\)</span> avec une fonction de masse <span class="math inline">\(f\)</span> est définie comme <span class="math display">\[ \mathbb{E} X = \sum_{x : f(x)&gt;0} x f(x) \]</span> lorsque cette somme est <em>absolument</em> convergente; la convergence absolue est requise afin que cette somme ait une même valeur quelque soit l’ordre dans lequel on somme les <span class="math inline">\(x\)</span> (cf. cours analyse sur les familles sommables).
+<span id="def:unnamed-chunk-10" class="definition"><strong>Définition 3.3  </strong></span>L’<strong>espérance</strong> d’une variables aléatoire discrète <span class="math inline">\(X\)</span> avec une fonction de masse <span class="math inline">\(f\)</span> est définie comme <span class="math display">\[ \mathbb{E} X = \sum_{x : f(x)&gt;0} x f(x) \]</span> lorsque cette somme est <em>absolument</em> convergente; la convergence absolue est requise afin que cette somme ait une même valeur quelque soit l’ordre dans lequel on somme les <span class="math inline">\(x\)</span> (cf. cours analyse sur les familles sommables).
 </div>
 <p> En particulier, lorsque <span class="math inline">\(A\)</span> est un évènement, on a <span class="math display">\[\mathbb{E} \mathbf{1}_A = \mathbb{P}(A).\]</span></p>
 Afin de calculer les espérances de fonctions de variables aléatoires, on peut envisager de calculer la fonction de masse de cette nouvelle variable aléatoire. Cette approche est délicate et peu pertinente grâce au lemme: 
 <div class="lemma">
-<span id="lem:unnamed-chunk-6" class="lemma"><strong>Lemme 3.2  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire discrète, <span class="math inline">\(f\)</span> sa fonction de masse. Soit <span class="math inline">\(g\)</span> une fonction réelle. Alors l’espérance de <span class="math inline">\(g(X)\)</span> est définie par <span class="math display">\[
+<span id="lem:unnamed-chunk-11" class="lemma"><strong>Lemme 3.2  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire discrète, <span class="math inline">\(f\)</span> sa fonction de masse. Soit <span class="math inline">\(g\)</span> une fonction réelle. Alors l’espérance de <span class="math inline">\(g(X)\)</span> est définie par <span class="math display">\[
 \mathbb{E} g(X) = \sum_{x} g(x) f(x)
 \]</span> lorsque cette somme est absolument convergente.
 </div>
 
 On peut ainsi calculer les moments pour tout ordre (<span class="math inline">\(m_k = \mathbb{E} X^k\)</span>) ainsi que les moments centrés (<span class="math inline">\(\sigma_k = \mathbb{E} (X - m_1)^k\)</span>). En particulier, on définit : 
 <div class="definition">
-<span id="def:unnamed-chunk-7" class="definition"><strong>Définition 3.4  </strong></span> Le moment d’ordre 1 s’appelle l’espérance de <span class="math inline">\(X\)</span>, le moment centré d’ordre 2 de <span class="math inline">\(X\)</span> s’appelle la variance de <span class="math inline">\(X\)</span> (notée <span class="math inline">\(\mathbb{V}X\)</span>) : c’est une quantité positive! On appelle <span class="math inline">\(\sigma = \sqrt{\sigma_2}\)</span> l’écart-type de <span class="math inline">\(X\)</span>.
+<span id="def:unnamed-chunk-12" class="definition"><strong>Définition 3.4  </strong></span> Le moment d’ordre 1 s’appelle l’espérance de <span class="math inline">\(X\)</span>, le moment centré d’ordre 2 de <span class="math inline">\(X\)</span> s’appelle la variance de <span class="math inline">\(X\)</span> (notée <span class="math inline">\(\mathbb{V}X\)</span>) : c’est une quantité positive! On appelle <span class="math inline">\(\sigma = \sqrt{\sigma_2}\)</span> l’écart-type de <span class="math inline">\(X\)</span>.
 </div>
 
 
 <div class="lemma">
-<span id="lem:unnamed-chunk-8" class="lemma"><strong>Lemme 3.3  </strong></span>On peut exprimer les moments centrés en fonction de moments d’ordres inférieurs ; en particulier, <span class="math display">\[\sigma_2 = m_2 - m_1^2 \]</span>
+<span id="lem:unnamed-chunk-13" class="lemma"><strong>Lemme 3.3  </strong></span>On peut exprimer les moments centrés en fonction de moments d’ordres inférieurs ; en particulier, <span class="math display">\[\sigma_2 = m_2 - m_1^2 \]</span>
 </div>
 
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-9" class="theorem"><strong>Théorème 3.2  </strong></span>L’opérateur $  $ est une forme linéaire ( pour $  $, $ X,Y $ deux variables aléatoires admettant une espérance, $  (X+Y) =  +  Y <span class="math inline">\(), positive (\)</span> X 0$ entraine <span class="math inline">\(\mathbb{E}X \geq 0\)</span>) vérifiant <span class="math inline">\(\mathbb{E}1 = 1\)</span>.
+<span id="thm:unnamed-chunk-14" class="theorem"><strong>Théorème 3.2  </strong></span>L’opérateur <span class="math inline">\(\mathbb{E}\)</span> est une forme linéaire ( pour <span class="math inline">\(\lambda \in \mathbb{R}\)</span>, <span class="math inline">\(X,Y\)</span> deux variables aléatoires admettant une espérance, <span class="math inline">\(\mathbb{E} (X+\lambda Y) = \mathbb{X} + \lambda \mathbb{E} Y\)</span>), positive (<span class="math inline">\(X \geq 0\)</span> entraine <span class="math inline">\(\mathbb{E}X \geq 0\)</span>) vérifiant <span class="math inline">\(\mathbb{E}1 = 1\)</span>.
 </div>
 <p> Par contre, il n’est pas vrai (en général) que <span class="math display">\[\mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span></p>
 
 <div class="lemma">
-<span id="lem:unnamed-chunk-10" class="lemma"><strong>Lemme 3.4  </strong></span>Si <span class="math inline">\(X,Y\)</span> sont des variables aléatoires indépendantes, alors <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span>
+<span id="lem:unnamed-chunk-15" class="lemma"><strong>Lemme 3.4  </strong></span>Si <span class="math inline">\(X,Y\)</span> sont des variables aléatoires indépendantes, alors <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span>
 </div>
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-11" class="definition"><strong>Définition 3.5  </strong></span>On dit que les variables aléatoires <span class="math inline">\(X,Y\)</span> sont <strong>non corrélées</strong> si <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span>
+<span id="def:unnamed-chunk-16" class="definition"><strong>Définition 3.5  </strong></span>On dit que les variables aléatoires <span class="math inline">\(X,Y\)</span> sont <strong>non corrélées</strong> si <span class="math display">\[ \mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . \]</span>
 </div>
 <p> Ainsi, les variables indépendantes sont non-corrélées, mais l’inverse n’est pas vrai !</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-12" class="theorem"><strong>Théorème 3.3  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires, <span class="math inline">\(\lambda \in \mathbb{R}\)</span>. Alors <span class="math inline">\(\mathbb{V} \lambda X = \lambda^2 \mathbb{V}X\)</span> et <span class="math inline">\(\mathbb{V}(X+Y) = \mathbb{V}X+\mathbb{V}Y\)</span> si ces variables sont non-corrélées.
+<span id="thm:unnamed-chunk-17" class="theorem"><strong>Théorème 3.3  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires, <span class="math inline">\(\lambda \in \mathbb{R}\)</span>. Alors <span class="math inline">\(\mathbb{V} \lambda X = \lambda^2 \mathbb{V}X\)</span> et <span class="math inline">\(\mathbb{V}(X+Y) = \mathbb{V}X+\mathbb{V}Y\)</span> si ces variables sont non-corrélées.
+</div>
+
+</div>
+<div id="cas-particuliers-de-variables-discretes-aleatoires" class="section level2">
+<h2><span class="header-section-number">3.4</span> Cas particuliers de variables discrètes aléatoires</h2>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-18" class="theorem"><strong>Théorème 3.4  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire suivant une loi uniforme. Alors <span class="math display">\[\mathbb{E}X = \frac{n+1}{2} , \mathbb{V}X = \frac{n^2-1}{12}\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-19" class="theorem"><strong>Théorème 3.5  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire suivant une loi de Bernoulli. Alors <span class="math display">\[\mathbb{E}X = p , \mathbb{V}X = p(1-p)\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-20" class="theorem"><strong>Théorème 3.6  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire suivant une loi binômiale <span class="math inline">\(\mathcal{B}(n,p)\)</span>. Alors <span class="math display">\[\mathbb{E}X = np , \mathbb{V}X = np(1-p)\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-21" class="theorem"><strong>Théorème 3.7  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire suivant une loi géométrique <span class="math inline">\(\mathcal{G}(p)\)</span>. Alors <span class="math display">\[\mathbb{E}X = \frac{1}{p} , \mathbb{V}X = \frac{1-p}{p^2}\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-22" class="theorem"><strong>Théorème 3.8  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire suivant une loi de Poisson <span class="math inline">\(\mathcal{P}(\lambda)\)</span>. Alors <span class="math display">\[\mathbb{E}X = \lambda , \mathbb{V}X = \lambda\]</span>
+</div>
+
+</div>
+<div id="dependance" class="section level2">
+<h2><span class="header-section-number">3.5</span> Dépendance</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-23" class="definition"><strong>Définition 3.6  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. La fonction de répartition jointe <span class="math display">\[F(x,y) = \mathbb{P}(X \leq x , Y \leq y).\]</span></p>
+La fonction de masse jointe est donnée par <span class="math display">\[ f(x,y) = \mathbb{P}(X=x, Y=y).\]</span>
+</div>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-24" class="lemma"><strong>Lemme 3.5  </strong></span>Les variables aléatoires discrètes <span class="math inline">\(X,Y\)</span> sont indépendantes si et seulement si <span class="math display">\[
+f_{X,Y}(x,y) = f_X(x) f_Y(y).  
+\]</span> Plus généralement, <span class="math inline">\(X,Y\)</span> sont indépendantes si et seulement si il existe des fonctions réelles <span class="math inline">\(f,g\)</span> telles que <span class="math display">\[
+  f_{X,Y}(x,y) = f(x) g(y).  
+\]</span>
+</div>
+ A partir de la connaissance de <span class="math inline">\(f_{X,Y}\)</span>, il est possible de calculer <span class="math inline">\(f_X\)</span> ou <span class="math inline">\(f_Y\)</span> grâce au théorème suivant : 
+<div class="theorem">
+<span id="thm:unnamed-chunk-25" class="theorem"><strong>Théorème 3.9  </strong></span>On a: <span class="math display">\[f_X(x) = \sum_y f_{X,Y}(x,y)\]</span> <span class="math display">\[f_Y(y) = \sum_x f_{X,Y}(x,y)\]</span>
+</div>
+
+Le calcul de l’espérance d’une fonction de variables aléatoires est rendu facile par le 
+<div class="lemma">
+<span id="lem:unnamed-chunk-26" class="lemma"><strong>Lemme 3.6  </strong></span>Soit <span class="math inline">\(g\)</span> une fonction telle que <span class="math inline">\(g(X,Y)\)</span> soit une variable aléatoire. Alors <span class="math display">\[\mathbb{E} g(X,Y) = \sum_{x,y} g(x,y)f_{X,Y}(x,y)\]</span> si cette somme existe.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-27" class="definition"><strong>Définition 3.7  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires. Leur covariance est définie par: <span class="math display">\[cov(X,Y) = \mathbb{E} \left[ (X- \mathbb{E}X) (Y - \mathbb{E}Y)\right] = \mathbb{E}XY - \mathbb{E}X \mathbb{E}Y.\]</span> Le coefficient de corrélation est : <span class="math display">\[cor(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathbb{V}X \mathbb{V}Y}}.\]</span>
+</div>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-28" class="lemma"><strong>Lemme 3.7  </strong></span>Le coefficient de corrélation est en module inférieur à 1 et égal à <span class="math inline">\(\pm 1\)</span> si seulement si il existe des réels <span class="math inline">\(a,b,c\)</span> tels que <span class="math display">\[\mathbb{P}(aX+bY+c=0)=1.\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-29" class="theorem"><strong>Théorème 3.10  </strong></span>Soit <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. Alors <span class="math display">\[\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb{E} Y^2\right)\]</span> avec égalité si et seulement si il existe des réels <span class="math inline">\(\lambda,\mu\)</span> non tous nuls tels que <span class="math display">\[\mathbb{P}(\lambda X + \mu Y = 0) = 1.\]</span>
 </div>
 
 
@@ -189,20 +299,13 @@ On peut ainsi calculer les moments pour tout ordre (<span class="math inline">\(
 
 
 
-<!-- # Autres annexes -->
-
-<!--  -->
-<!-- # Références {-} -->
-<!--  -->
-
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="variables-aleatoires.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="variables-aleatoires.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="techniques-de-denombrement-en-probabilite.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
