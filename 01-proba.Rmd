@@ -35,7 +35,48 @@ $$
 ```{lemma}
 Une fonction  $f : \mathbb{R} \mapsto \left[0 ,1 \right]$ est une fonction de masse si et seulement si  l'ensemble $\lbrace x : f(x) >0 \rbrace$ est dénombrable et $\sum_{i} f(x_i) = 1$, où les $x_1, \ldots, x_n, \ldots$ sont les valeurs de $x$ tel que $f(x)>0$.
 ```
-TODO : exemples du programme
+
+```{example}
+On choisit un nombre entier entre $1$ et $n$, de façon équiprobable. Un tel choix définit une variable aléatoire discrète, de loi uniforme.
+```
+
+
+```{example}
+On lance une pièce $n$ fois, et on tombe sur pile avec une probabilité $p$.
+L'ensemble des évènements est $\Omega = \lbrace \mbox{pile}, \mbox{face} \rbrace$.
+Le nombre de fois que l'on obtient "pile" est une variable aléatoire discrète dont la fonction de masse vérifie:
+$$
+  f(x) = \left\lbrace
+\begin{array}{ccc}
+0  & \mbox{si} & x\notin \lbrace 0, \ldots , n \rbrace\\
+\binom{n}{k} p^k (1-p)^{n-k} & \mbox{sinon} &\\
+\end{array}\right.
+$$
+On dit que cette variable aléatoire suit une loi binômiale (notée $\mathcal{B}(n,p)$).  
+Lorsque $n=1$, on dit que la variable aléatoire suit une loi de Bernoulli (notée $\mathcal{B}(p)$). 
+```
+```{example}
+On compte le nombre d'épreuves de Bernoulli nécessaires pour arriver sur "pile" pour la première fois. Ce nombre de lancer est une variables aléatoire discrète, à valeur dans $\mathbb{N}^*$ et de fonction de masse:
+$$
+f(k) = (1-p)^{k-1} p \forall k \in \mathbb{N}^*
+$$
+La loi correspondante s'appelle la loi géométrique, de paramètre $p$, notée $\mathcal{G}(p)$. 
+```
+
+
+```{example}
+Une variable aléatoire prenant ses valeurs dans $\mathbb{N}$ avec une fonction de masse $$
+  f(k) = \frac{\lambda^k}{k!} e^{-\lambda} \forall k \in \mathbb{N}$$
+  suit une loi de Poisson de paramètre $\lambda >0$, notée $\mathcal{P}(\lambda)$.
+```
+
+```{example}
+Soit $0<p<1$. On tire simultanément $n$ boules dans une urne contenant $A$ boules, dont $pA$ gagnantes et $(1-p)A$ perdantes. On compte le nombre de boules gagnantes extraites. La loi de cette variable aléatoire discrète est la loi hypergéométrique, de fonction de masse:
+  $$
+  f(k) = \frac{\binom{pA}{k} \binom{qA}{n-k}}{\binom{A}{n}}
+  $$
+```
+
 
 ## Indépendance
 
@@ -83,9 +124,9 @@ $$\sigma_2 = m_2 - m_1^2 $$
 ```
 
 ```{theorem}
-L'opérateur $ \mathbb{E} $ est une forme linéaire ( pour $ \lambda \in \mathbb{R} $,
-$ X,Y $ deux variables aléatoires admettant une espérance,
-$ \mathbb{E} (X+\lambda Y) = \mathbb{X} + \lambda \mathbb{E} Y $), positive ($ X \geq 0$ entraine $\mathbb{E}X \geq 0$) vérifiant $\mathbb{E}1 = 1$.
+L'opérateur $\mathbb{E}$ est une forme linéaire ( pour $\lambda \in \mathbb{R}$,
+$X,Y$ deux variables aléatoires admettant une espérance,
+$\mathbb{E} (X+\lambda Y) = \mathbb{X} + \lambda \mathbb{E} Y$), positive ($X \geq 0$ entraine $\mathbb{E}X \geq 0$) vérifiant $\mathbb{E}1 = 1$.
 ```
 Par contre, il n'est pas vrai (en général) que 
 $$\mathbb{E} XY = (\mathbb{E}X) ( \mathbb{E} Y) . $$
@@ -105,5 +146,83 @@ Ainsi, les variables indépendantes sont non-corrélées, mais l'inverse n'est p
 Soient $X,Y$ deux variables aléatoires, $\lambda \in \mathbb{R}$. Alors $\mathbb{V} \lambda X = \lambda^2 \mathbb{V}X$ et $\mathbb{V}(X+Y) = \mathbb{V}X+\mathbb{V}Y$ si ces variables sont non-corrélées.
 ```
 
+## Cas particuliers de variables discrètes aléatoires
 
+```{theorem}
+Soit $X$ une variable aléatoire suivant une loi uniforme. Alors 
+$$\mathbb{E}X = \frac{n+1}{2} , \mathbb{V}X = \frac{n^2-1}{12}$$
+```
+
+```{theorem}
+Soit $X$ une variable aléatoire suivant une loi de Bernoulli. Alors 
+$$\mathbb{E}X = p , \mathbb{V}X = p(1-p)$$
+```
+
+```{theorem}
+Soit $X$ une variable aléatoire suivant une loi binômiale $\mathcal{B}(n,p)$. Alors 
+$$\mathbb{E}X = np , \mathbb{V}X = np(1-p)$$
+```
+
+```{theorem}
+Soit $X$ une variable aléatoire suivant une loi géométrique $\mathcal{G}(p)$. Alors 
+$$\mathbb{E}X = \frac{1}{p} , \mathbb{V}X = \frac{1-p}{p^2}$$
+```
+
+```{theorem}
+Soit $X$ une variable aléatoire suivant une loi de Poisson $\mathcal{P}(\lambda)$. Alors 
+$$\mathbb{E}X = \lambda , \mathbb{V}X = \lambda$$
+```
+
+## Dépendance
+
+```{definition}
+Soient $X,Y$ deux variables aléatoires discrètes. La fonction de répartition jointe 
+$$F(x,y) = \mathbb{P}(X \leq x , Y \leq y).$$
+
+La fonction de masse jointe est donnée par
+$$ f(x,y) = \mathbb{P}(X=x, Y=y).$$
+```
+
+```{lemma}
+Les variables aléatoires discrètes $X,Y$ sont indépendantes si et seulement si
+$$
+f_{X,Y}(x,y) = f_X(x) f_Y(y).  
+$$
+  Plus généralement, $X,Y$ sont indépendantes si et seulement si il existe des fonctions réelles $f,g$ telles que 
+$$
+  f_{X,Y}(x,y) = f(x) g(y).  
+$$
+```
+A partir de la connaissance de $f_{X,Y}$, il est possible de calculer $f_X$ ou $f_Y$ grâce au théorème suivant :
+```{theorem}
+On a:
+  $$f_X(x) = \sum_y f_{X,Y}(x,y)$$
+  $$f_Y(y) = \sum_x f_{X,Y}(x,y)$$
+```
+
+Le calcul de l'espérance d'une fonction de variables aléatoires est rendu facile par le 
+```{lemma}
+Soit $g$ une fonction telle que $g(X,Y)$ soit une variable aléatoire. Alors
+  $$\mathbb{E} g(X,Y) = \sum_{x,y} g(x,y)f_{X,Y}(x,y)$$
+  si cette somme existe.
+```
+
+```{definition}
+Soient $X,Y$ deux variables aléatoires. Leur covariance est définie par:
+  $$cov(X,Y) = \mathbb{E} \left[ (X- \mathbb{E}X) (Y - \mathbb{E}Y)\right] = \mathbb{E}XY - \mathbb{E}X \mathbb{E}Y.$$
+  Le coefficient de corrélation est :
+  $$cor(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathbb{V}X \mathbb{V}Y}}.$$
+```
+
+```{lemma}
+Le coefficient de corrélation est en module inférieur à 1 et égal à $\pm 1$ si seulement si il existe des réels $a,b,c$ tels que $$\mathbb{P}(aX+bY+c=0)=1.$$
+  
+```
+
+```{theorem}
+Soit $X,Y$ deux variables aléatoires discrètes. Alors 
+$$\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb{E} Y^2\right)$$
+  avec égalité si et seulement si il existe des réels $\lambda,\mu$ non tous nuls tels que 
+$$\mathbb{P}(\lambda X + \mu Y = 0) = 1.$$
+```
 
