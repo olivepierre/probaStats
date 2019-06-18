@@ -1,0 +1,21 @@
+# Variables aléatoires continues
+
+## densités de probabilités
+
+## Indépendance
+
+## Espérance
+
+## Exemples de variables aléatoires continues
+
+## Dépendance
+
+## Loi conditionnelle et espérance conditionnelle
+
+## Fonctions de variables aléatoires
+
+## Somme de variables aléatoires
+
+## La loi normale multivariée, applications
+ <!-- = 4.9+4.10 -->
+

@@ -241,6 +241,15 @@ $$\mathbb{E} Y = \mathbb{E} \left( \mathbb{E}(Y | X)\right)$$
 Pour toute fonction $g$ pour laquelle les sommes sont définies, on a :
   $$\mathbb{E} \left(Y g(X)\right) = \mathbb{E} \left( g(X) \mathbb{E}(Y | X)\right)$$
 ```
+```{definition}
+La **variance conditionnelle** de $Y$ sachant $X$ est définie par
+$$\mathbb{V}(Y | X) = \mathbb{E} \left( [Y- \mathbb{E}(Y | X)]^2  | X\right).$$)
+```
+La variance conditionnelle est liée à l'espérance conditionnelle par le théorème :
+
+```{theorem}
+$$\mathbb{V}(Y)=\mathbb{E}(\mathbb{V}[Y| X])+\mathbb{V}(\mathbb{E}[Y|X])$$\mathbb{V}
+```
 
 ## Somme de variables aléatoires discrètes
 Soient $X,Y$ deux variables aléatoires discrètes.
