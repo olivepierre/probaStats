@@ -1,0 +1,7 @@
+# Variables aléatoires
+
+## Variables aléatoires
+
+## Variables discrètes et continues
+
+## Vecteurs aléatoires
