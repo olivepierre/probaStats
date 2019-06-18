@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="variables-aleatoires.html">
-<link rel="next" href="techniques-de-denombrement-en-probabilite.html">
+<link rel="next" href="variables-aleatoires-continues.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -84,10 +84,27 @@
 <li class="chapter" data-level="3.6" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#loi-conditionnelle-et-esperance-conditionnelle"><i class="fa fa-check"></i><b>3.6</b> Loi conditionnelle et espérance conditionnelle</a></li>
 <li class="chapter" data-level="3.7" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#somme-de-variables-aleatoires-discretes"><i class="fa fa-check"></i><b>3.7</b> Somme de variables aléatoires discrètes</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html"><i class="fa fa-check"></i><b>4</b> Variables aléatoires continues</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#densites-de-probabilites"><i class="fa fa-check"></i><b>4.1</b> densités de probabilités</a></li>
+<li class="chapter" data-level="4.2" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#independance-2"><i class="fa fa-check"></i><b>4.2</b> Indépendance</a></li>
+<li class="chapter" data-level="4.3" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#esperance-1"><i class="fa fa-check"></i><b>4.3</b> Espérance</a></li>
+<li class="chapter" data-level="4.4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#exemples-de-variables-aleatoires-continues"><i class="fa fa-check"></i><b>4.4</b> Exemples de variables aléatoires continues</a></li>
+<li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#dependance-1"><i class="fa fa-check"></i><b>4.5</b> Dépendance</a></li>
+<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#loi-conditionnelle-et-esperance-conditionnelle-1"><i class="fa fa-check"></i><b>4.6</b> Loi conditionnelle et espérance conditionnelle</a></li>
+<li class="chapter" data-level="4.7" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#fonctions-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.7</b> Fonctions de variables aléatoires</a></li>
+<li class="chapter" data-level="4.8" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.8</b> Somme de variables aléatoires</a></li>
+<li class="chapter" data-level="4.9" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee-applications"><i class="fa fa-check"></i><b>4.9</b> La loi normale multivariée, applications</a></li>
+</ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
-<li class="chapter" data-level="A" data-path="techniques-de-denombrement-en-probabilite.html"><a href="techniques-de-denombrement-en-probabilite.html"><i class="fa fa-check"></i><b>A</b> Techniques de dénombrement en probabilité</a></li>
-<li class="chapter" data-level="B" data-path="fonctions-indicatrices.html"><a href="fonctions-indicatrices.html"><i class="fa fa-check"></i><b>B</b> Fonctions indicatrices</a></li>
+<li class="chapter" data-level="A" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html"><i class="fa fa-check"></i><b>A</b> Statistique descriptive</a><ul>
+<li class="chapter" data-level="A.1" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#distribution-univariee"><i class="fa fa-check"></i><b>A.1</b> Distribution univariée</a></li>
+<li class="chapter" data-level="A.2" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#distribution-bivariee"><i class="fa fa-check"></i><b>A.2</b> Distribution bivariée</a></li>
+<li class="chapter" data-level="A.3" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#series-temporelles"><i class="fa fa-check"></i><b>A.3</b> Séries temporelles</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="techniques-de-denombrement-en-probabilite.html"><a href="techniques-de-denombrement-en-probabilite.html"><i class="fa fa-check"></i><b>B</b> Techniques de dénombrement en probabilité</a></li>
+<li class="chapter" data-level="C" data-path="fonctions-indicatrices.html"><a href="fonctions-indicatrices.html"><i class="fa fa-check"></i><b>C</b> Fonctions indicatrices</a></li>
+<li class="chapter" data-level="D" data-path="echantillonage.html"><a href="echantillonage.html"><i class="fa fa-check"></i><b>D</b> Échantillonage</a></li>
 </ul>
 
       </nav>
@@ -316,13 +333,22 @@ La <strong>fonction de masse conditionnelle</strong> de <span class="math inline
 <div class="theorem">
 <span id="thm:unnamed-chunk-33" class="theorem"><strong>Théorème 3.12  </strong></span>Pour toute fonction <span class="math inline">\(g\)</span> pour laquelle les sommes sont définies, on a : <span class="math display">\[\mathbb{E} \left(Y g(X)\right) = \mathbb{E} \left( g(X) \mathbb{E}(Y | X)\right)\]</span>
 </div>
+ 
+<div class="definition">
+<span id="def:unnamed-chunk-34" class="definition"><strong>Définition 3.10  </strong></span>La <strong>variance conditionnelle</strong> de <span class="math inline">\(Y\)</span> sachant <span class="math inline">\(X\)</span> est définie par <span class="math display">\[\mathbb{V}(Y | X) = \mathbb{E} \left( [Y- \mathbb{E}(Y | X)]^2  | X\right).\]</span>)
+</div>
+<p> La variance conditionnelle est liée à l’espérance conditionnelle par le théorème :</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-35" class="theorem"><strong>Théorème 3.13  </strong></span><span class="math display">\[\mathbb{V}(Y)=\mathbb{E}(\mathbb{V}[Y| X])+\mathbb{V}(\mathbb{E}[Y|X])\]</span>
+</div>
 
 </div>
 <div id="somme-de-variables-aleatoires-discretes" class="section level2">
 <h2><span class="header-section-number">3.7</span> Somme de variables aléatoires discrètes</h2>
 Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. 
 <div class="theorem">
-<span id="thm:unnamed-chunk-34" class="theorem"><strong>Théorème 3.13  </strong></span>La loi de <span class="math inline">\(X+Y\)</span> est définie par <span class="math display">\[
+<span id="thm:unnamed-chunk-36" class="theorem"><strong>Théorème 3.14  </strong></span>La loi de <span class="math inline">\(X+Y\)</span> est définie par <span class="math display">\[
   \mathbb{P}(X+Y=z) = \sum_x f_{X,Y} (x,z-x)
 \]</span> Si, en outre, <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont indépendantes, alors <span class="math display">\[
   \mathbb{P}(X+Y=z) = \sum_x f_X(x) f_Y(z-x) = \sum_y f_X(z-y) f_Y(y)
@@ -332,24 +358,13 @@ Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discr
 
 </div>
 </div>
-
-
-
-<!-- On peut ajouter des blocs (cf https://github.com/rstudio/bookdown/blob/master/inst/examples/css/style.css +  https://github.com/rstudio/bookdown/blob/master/inst/examples/02-components.Rmd) -->
-<!-- il faut penser à modifier le css -->
-<!-- # Références -->
-
-</div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
 <a href="variables-aleatoires.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="techniques-de-denombrement-en-probabilite.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="variables-aleatoires-continues.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
