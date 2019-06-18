@@ -81,6 +81,8 @@
 <li class="chapter" data-level="3.3" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#esperance"><i class="fa fa-check"></i><b>3.3</b> Espérance</a></li>
 <li class="chapter" data-level="3.4" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#cas-particuliers-de-variables-discretes-aleatoires"><i class="fa fa-check"></i><b>3.4</b> Cas particuliers de variables discrètes aléatoires</a></li>
 <li class="chapter" data-level="3.5" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#dependance"><i class="fa fa-check"></i><b>3.5</b> Dépendance</a></li>
+<li class="chapter" data-level="3.6" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#loi-conditionnelle-et-esperance-conditionnelle"><i class="fa fa-check"></i><b>3.6</b> Loi conditionnelle et espérance conditionnelle</a></li>
+<li class="chapter" data-level="3.7" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#somme-de-variables-aleatoires-discretes"><i class="fa fa-check"></i><b>3.7</b> Somme de variables aléatoires discrètes</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
@@ -187,7 +189,7 @@ Afin de calculer les espérances de fonctions de variables aléatoires, on peut 
 
 On peut ainsi calculer les moments pour tout ordre (<span class="math inline">\(m_k = \mathbb{E} X^k\)</span>) ainsi que les moments centrés (<span class="math inline">\(\sigma_k = \mathbb{E} (X - m_1)^k\)</span>). En particulier, on définit : 
 <div class="definition">
-<span id="def:unnamed-chunk-12" class="definition"><strong>Définition 3.4  </strong></span> Le moment d’ordre 1 s’appelle l’espérance de <span class="math inline">\(X\)</span>, le moment centré d’ordre 2 de <span class="math inline">\(X\)</span> s’appelle la variance de <span class="math inline">\(X\)</span> (notée <span class="math inline">\(\mathbb{V}X\)</span>) : c’est une quantité positive! On appelle <span class="math inline">\(\sigma = \sqrt{\sigma_2}\)</span> l’écart-type de <span class="math inline">\(X\)</span>.
+<span id="def:unnamed-chunk-12" class="definition"><strong>Définition 3.4  </strong></span> Le <strong>moment d’ordre 1</strong> s’appelle l’espérance de <span class="math inline">\(X\)</span>, le <strong>moment centré d’ordre 2</strong> de <span class="math inline">\(X\)</span> s’appelle la variance de <span class="math inline">\(X\)</span> (notée <span class="math inline">\(\mathbb{V}X\)</span>) : c’est une quantité positive! On appelle <span class="math inline">\(\sigma = \sqrt{\sigma_2}\)</span> l’écart-type de <span class="math inline">\(X\)</span>.
 </div>
 
 
@@ -248,8 +250,8 @@ On peut ainsi calculer les moments pour tout ordre (<span class="math inline">\(
 <h2><span class="header-section-number">3.5</span> Dépendance</h2>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-23" class="definition"><strong>Définition 3.6  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. La fonction de répartition jointe <span class="math display">\[F(x,y) = \mathbb{P}(X \leq x , Y \leq y).\]</span></p>
-La fonction de masse jointe est donnée par <span class="math display">\[ f(x,y) = \mathbb{P}(X=x, Y=y).\]</span>
+<p><span id="def:unnamed-chunk-23" class="definition"><strong>Définition 3.6  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. La <strong>fonction de répartition jointe</strong> est définie par <span class="math display">\[F(x,y) = \mathbb{P}(X \leq x , Y \leq y).\]</span></p>
+La <strong>fonction de masse jointe</strong> est donnée par <span class="math display">\[ f(x,y) = \mathbb{P}(X=x, Y=y).\]</span>
 </div>
 
 
@@ -272,7 +274,7 @@ Le calcul de l’espérance d’une fonction de variables aléatoires est rendu 
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-27" class="definition"><strong>Définition 3.7  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires. Leur covariance est définie par: <span class="math display">\[cov(X,Y) = \mathbb{E} \left[ (X- \mathbb{E}X) (Y - \mathbb{E}Y)\right] = \mathbb{E}XY - \mathbb{E}X \mathbb{E}Y.\]</span> Le coefficient de corrélation est : <span class="math display">\[cor(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathbb{V}X \mathbb{V}Y}}.\]</span>
+<span id="def:unnamed-chunk-27" class="definition"><strong>Définition 3.7  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires. Leur <strong>covariance</strong> est définie par: <span class="math display">\[cov(X,Y) = \mathbb{E} \left[ (X- \mathbb{E}X) (Y - \mathbb{E}Y)\right] = \mathbb{E}XY - \mathbb{E}X \mathbb{E}Y.\]</span> Le <strong>coefficient de corrélation</strong> est : <span class="math display">\[cor(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathbb{V}X \mathbb{V}Y}}.\]</span>
 </div>
 
 
@@ -283,6 +285,48 @@ Le calcul de l’espérance d’une fonction de variables aléatoires est rendu 
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-29" class="theorem"><strong>Théorème 3.10  </strong></span>Soit <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. Alors <span class="math display">\[\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb{E} Y^2\right)\]</span> avec égalité si et seulement si il existe des réels <span class="math inline">\(\lambda,\mu\)</span> non tous nuls tels que <span class="math display">\[\mathbb{P}(\lambda X + \mu Y = 0) = 1.\]</span>
+</div>
+
+</div>
+<div id="loi-conditionnelle-et-esperance-conditionnelle" class="section level2">
+<h2><span class="header-section-number">3.6</span> Loi conditionnelle et espérance conditionnelle</h2>
+Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. 
+<div class="definition">
+<p><span id="def:unnamed-chunk-30" class="definition"><strong>Définition 3.8  </strong></span>La <strong>fonction de répartion conditionnelle</strong> de <span class="math inline">\(Y\)</span> sachant <span class="math inline">\(X=x\)</span>, notée <span class="math inline">\(F_{Y|X}(\bullet | x)\)</span> est définie par <span class="math display">\[
+ F_{Y|X}(y | x) = \mathbb{P}(Y \leq y | X=x)
+\]</span> pour tout <span class="math inline">\(x\)</span> tel que <span class="math inline">\(\mathbb{P}(X=x)&gt;0\)</span>.</p>
+La <strong>fonction de masse conditionnelle</strong> de <span class="math inline">\(Y\)</span> sachant <span class="math inline">\(X=x\)</span>, notée <span class="math inline">\(f_{Y|X}(\bullet | x)\)</span> est définie par <span class="math display">\[
+ f_{Y|X}(y | x) = \mathbb{P}(Y = y | X=x)
+\]</span> pour tout <span class="math inline">\(x\)</span> tel que <span class="math inline">\(\mathbb{P}(X=x)&gt;0\)</span>.
+</div>
+<p> On a donc <span class="math display">\[
+ f_{Y|X} = f_{X,Y} / f_X
+ \]</span> lorsque cette expression est définie. Encore, <span class="math inline">\(f_{Y|X} = f_Y\)</span> si et seulement si <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont indépendantes.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-31" class="definition"><strong>Définition 3.9  </strong></span><strong>L’espérance conditionnelle</strong> de <span class="math inline">\(Y\)</span> par rapport à <span class="math inline">\(X\)</span> est définie comme <span class="math display">\[\mathbb{E}(Y | X=x) = \sum_y y f_{Y|X}(y | x)\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-32" class="theorem"><strong>Théorème 3.11  </strong></span>On a : <span class="math display">\[\mathbb{E} Y = \mathbb{E} \left( \mathbb{E}(Y | X)\right)\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-33" class="theorem"><strong>Théorème 3.12  </strong></span>Pour toute fonction <span class="math inline">\(g\)</span> pour laquelle les sommes sont définies, on a : <span class="math display">\[\mathbb{E} \left(Y g(X)\right) = \mathbb{E} \left( g(X) \mathbb{E}(Y | X)\right)\]</span>
+</div>
+
+</div>
+<div id="somme-de-variables-aleatoires-discretes" class="section level2">
+<h2><span class="header-section-number">3.7</span> Somme de variables aléatoires discrètes</h2>
+Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires discrètes. 
+<div class="theorem">
+<span id="thm:unnamed-chunk-34" class="theorem"><strong>Théorème 3.13  </strong></span>La loi de <span class="math inline">\(X+Y\)</span> est définie par <span class="math display">\[
+  \mathbb{P}(X+Y=z) = \sum_x f_{X,Y} (x,z-x)
+\]</span> Si, en outre, <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont indépendantes, alors <span class="math display">\[
+  \mathbb{P}(X+Y=z) = \sum_x f_X(x) f_Y(z-x) = \sum_y f_X(z-y) f_Y(y)
+\]</span> La fonction masse de <span class="math inline">\(X+Y\)</span> s’appelle alors le <strong>produit de convolution</strong> des fonctions masses de <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span>, et est noté <span class="math inline">\(f_X \star f_Y\)</span>.
 </div>
 
 
