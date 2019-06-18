@@ -87,13 +87,12 @@
 <li class="chapter" data-level="4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html"><i class="fa fa-check"></i><b>4</b> Variables aléatoires continues</a><ul>
 <li class="chapter" data-level="4.1" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#densites-de-probabilites"><i class="fa fa-check"></i><b>4.1</b> densités de probabilités</a></li>
 <li class="chapter" data-level="4.2" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#independance-2"><i class="fa fa-check"></i><b>4.2</b> Indépendance</a></li>
-<li class="chapter" data-level="4.3" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#esperance-1"><i class="fa fa-check"></i><b>4.3</b> Espérance</a></li>
-<li class="chapter" data-level="4.4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#exemples-de-variables-aleatoires-continues"><i class="fa fa-check"></i><b>4.4</b> Exemples de variables aléatoires continues</a></li>
-<li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#dependance-1"><i class="fa fa-check"></i><b>4.5</b> Dépendance</a></li>
-<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#loi-conditionnelle-et-esperance-conditionnelle-1"><i class="fa fa-check"></i><b>4.6</b> Loi conditionnelle et espérance conditionnelle</a></li>
-<li class="chapter" data-level="4.7" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#fonctions-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.7</b> Fonctions de variables aléatoires</a></li>
-<li class="chapter" data-level="4.8" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.8</b> Somme de variables aléatoires</a></li>
-<li class="chapter" data-level="4.9" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee-applications"><i class="fa fa-check"></i><b>4.9</b> La loi normale multivariée, applications</a></li>
+<li class="chapter" data-level="4.3" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#exemples-de-variables-aleatoires-continues"><i class="fa fa-check"></i><b>4.3</b> Exemples de variables aléatoires continues</a></li>
+<li class="chapter" data-level="4.4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#dependance-1"><i class="fa fa-check"></i><b>4.4</b> Dépendance</a></li>
+<li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#loi-conditionnelle-et-esperance-conditionnelle-1"><i class="fa fa-check"></i><b>4.5</b> Loi conditionnelle et espérance conditionnelle</a></li>
+<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#fonctions-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.6</b> Fonctions de variables aléatoires</a></li>
+<li class="chapter" data-level="4.7" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.7</b> Somme de variables aléatoires</a></li>
+<li class="chapter" data-level="4.8" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee-applications"><i class="fa fa-check"></i><b>4.8</b> La loi normale multivariée, applications</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
@@ -104,7 +103,8 @@
 </ul></li>
 <li class="chapter" data-level="B" data-path="techniques-de-denombrement-en-probabilite.html"><a href="techniques-de-denombrement-en-probabilite.html"><i class="fa fa-check"></i><b>B</b> Techniques de dénombrement en probabilité</a></li>
 <li class="chapter" data-level="C" data-path="fonctions-indicatrices.html"><a href="fonctions-indicatrices.html"><i class="fa fa-check"></i><b>C</b> Fonctions indicatrices</a></li>
-<li class="chapter" data-level="D" data-path="echantillonage.html"><a href="echantillonage.html"><i class="fa fa-check"></i><b>D</b> Échantillonage</a></li>
+<li class="chapter" data-level="D" data-path="espaces-lp.html"><a href="espaces-lp.html"><i class="fa fa-check"></i><b>D</b> Espaces <span class="math inline">\(L^p\)</span></a></li>
+<li class="chapter" data-level="E" data-path="echantillonage.html"><a href="echantillonage.html"><i class="fa fa-check"></i><b>E</b> Échantillonage</a></li>
 </ul>
 
       </nav>
@@ -126,30 +126,211 @@
 <h1><span class="header-section-number">Chapitre 4</span> Variables aléatoires continues</h1>
 <div id="densites-de-probabilites" class="section level2">
 <h2><span class="header-section-number">4.1</span> densités de probabilités</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-37" class="definition"><strong>Définition 4.1  </strong></span>Une variable aléatoire réelle <span class="math inline">\(X\)</span> est dite <strong>continue</strong> s’il existe une fonction f positive telle que <span class="math display">\[F_X(x) = \int_{-\infty}^x f(t) \mbox{d}t\]</span> Une telle fonction est une <strong>densité</strong> de <span class="math inline">\(X\)</span>. Cette densité n’est pas unique. Une telle densité est généralement notée <span class="math inline">\(f_X\)</span>.</p>
+Lorsque <span class="math inline">\(F_X\)</span> est dérivable, <span class="math inline">\(F_X&#39;\)</span> est une densité de <span class="math inline">\(X\)</span>.
+</div>
+
+
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-38" class="lemma"><strong>Lemme 4.1  </strong></span>Si <span class="math inline">\(X\)</span> admet <span class="math inline">\(f\)</span> comme densité, alors:</p>
+<ul>
+<li><p><span class="math inline">\(\int_{-\infty}^{+\infty} f(x) \mbox{d}x = 1\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathbb{P}(X=x)=0, \forall x \in \mathbb{R}\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathbb{P}(X \in \mathcal{E}) = \int_{\mathcal{E}} f(x) \mbox{d}x\)</span> pour tout évènement <span class="math inline">\(\mathcal{E}\)</span>;</p></li>
+<li><p><span class="math inline">\(X\)</span> et <span class="math inline">\(-X\)</span> ont les mêmes distributions si et seulement si <span class="math inline">\(f_X\)</span> est paire;</p></li>
+<li>Si <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> sont des densités, il en est de même pour <span class="math inline">\(\lambda f + (1-\lambda)g\)</span> pour <span class="math inline">\(0 \leq \lambda \leq 1\)</span>.
+</div>
+</li>
+</ul>
+
+<div class="example">
+<span id="exm:unnamed-chunk-39" class="example"><strong>Exemple 4.1  </strong></span>Soient <span class="math inline">\(a,b\)</span> deux réels avec <span class="math inline">\(a&lt;b\)</span>. La <strong>loi uniforme</strong> sur l’intervalle <span class="math inline">\([a,b]\)</span> est définie par sa densité de probabilité <span class="math display">\[
+f(x) = \left\lbrace
+\begin{array}{ccc}
+\frac{1}{b-a}  &amp; \mbox{si} &amp; a \leq x \leq b\\
+0 &amp; \mbox{sinon} &amp;\\
+\end{array}\right.
+\]</span> On note cette loi <span class="math inline">\(\mathcal{U}(a,b)\)</span>.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-40" class="example"><strong>Exemple 4.2  </strong></span>La <strong>loi exponentielle</strong> modélise la durée de vie d’un phénomène sans mémoire : la probabilité que le phénomène dure au moins <span class="math inline">\(s+t\)</span> sachant qu’il a déjà duré <span class="math inline">\(t\)</span> est la même que la probabilié de durer <span class="math inline">\(s\)</span> à partir de la mise en fonction initiale.</p>
+Soit <span class="math inline">\(\lambda &gt; 0\)</span>. La densité associée à cette loi est : <span class="math display">\[
+f(t) = \left\lbrace
+\begin{array}{ccc}
+\lambda e^{-\lambda t}  &amp; \mbox{si} &amp; t&gt;0\\
+0 &amp; \mbox{sinon} &amp;\\
+\end{array}\right.
+\]</span> On note la loi exponentielle de paramètre <span class="math inline">\(\lambda\)</span> : <span class="math inline">\(\mathcal{E}(\lambda)\)</span>.
+</div>
+ 
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-41" class="lemma"><strong>Lemme 4.2  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires qui suivent deux lois exponentielles, de paramètres <span class="math inline">\(\lambda, \mu\)</span>, alors <span class="math inline">\(\min (X,Y)\)</span> suit encore une loi exponentielle, de paramètre <span class="math inline">\(\lambda + \mu\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Exemple 4.3  </strong></span>La loi <strong>Gamma</strong> (qui généralise la loi exponentielle) modélise également des durées; elle est caractérisée par deux paramètres <span class="math inline">\(k,\theta\)</span> positifs.</p>
+<p>Sa densité est <span class="math display">\[ f(t) = \left\lbrace
+\begin{array}{ccc}
+\frac{t^{k-1} \exp \left(-\frac{t}{\theta} \right)}{\theta^k \Gamma (k)}   &amp; \mbox{si} &amp; x&gt;0\\
+0 &amp; \mbox{sinon} &amp; \\
+\end{array}\right.
+\]</span> où <span class="math inline">\(\Gamma\)</span> désigne la fonction Gamma d’Euler (<span class="math inline">\(\Gamma : z \mapsto \int_0^{+\infty} t^{z-1} e^{-t} \mbox{d}t\)</span>).</p>
+On note cette loi <span class="math inline">\(\Gamma(k,\theta)\)</span>.
+</div>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-43" class="lemma"><strong>Lemme 4.3  </strong></span>Soient <span class="math inline">\(X_1, \ldots, X_n\)</span> des variables aléatoires indépendantes, de loi <span class="math inline">\(\Gamma(k_1,\theta),\ldots,\Gamma(k_n,\theta)\)</span>. Alors <span class="math inline">\(X_1+\ldots+X_n\)</span> suit une loi <span class="math inline">\(\Gamma(\sum_{i=1}^n k_i,\theta)\)</span>.
+</div>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-44" class="lemma"><strong>Lemme 4.4  </strong></span>Soit <span class="math inline">\(X \sim \Gamma(k,\theta)\)</span> et <span class="math inline">\(t&gt;0\)</span>. Alors <span class="math inline">\(tX \sim \Gamma(k,t \theta)\)</span>.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Exemple 4.4  </strong></span>La <strong>loi normale</strong> est définie suivant deux paramètres (<span class="math inline">\(\mu \in \mathbb{R}, \sigma &gt;0\)</span>) par sa densité:</p>
+<span class="math display">\[
+  f(x) = \frac{1}{\sigma \sqrt{2 \pi}} \exp \left(-\frac{(x-\mu)^2}{2 \sigma^2}\right)
+  \]</span> On note la loi <span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-46" class="example"><strong>Exemple 4.5  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire qui suit une loi normale <span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>. Alors <span class="math inline">\(\exp(X)\)</span> suit une loi <strong>log-normale</strong>.
+</div>
+
 </div>
 <div id="independance-2" class="section level2">
 <h2><span class="header-section-number">4.2</span> Indépendance</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-47" class="definition"><strong>Définition 4.2  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires réelles. On dit que les variables aléatoires <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont <strong>indépendantes</strong> si les évènements <span class="math inline">\(\lbrace X \leq x \rbrace\)</span> et <span class="math inline">\(\lbrace Y \leq y \rbrace\)</span> sont indépendants pour tous <span class="math inline">\(x,y\)</span> réels.
 </div>
-<div id="esperance-1" class="section level2">
-<h2><span class="header-section-number">4.3</span> Espérance</h2>
+
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-48" class="theorem"><strong>Théorème 4.1  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires, <span class="math inline">\(f,g\)</span> deux fonctions telles que <span class="math inline">\(f(X), g(Y)\)</span> soient des variables aléatoires.</p>
+<p>Si <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont indépendantes, il en est de même pour <span class="math inline">\(f(X)\)</span> et <span class="math inline">\(g(Y)\)</span>.```</p>
+<h2 id="esperance-1"><span class="header-section-number">4.2</span> Espérance</h2>
+</div>
+ 
+<div class="definition">
+<span id="def:unnamed-chunk-49" class="definition"><strong>Définition 4.3  </strong></span><strong>L’espérance</strong> d’une variable aléatoire <span class="math inline">\(X\)</span> de densité <span class="math inline">\(f\)</span> est définie par <span class="math display">\[\mathbb{E}X = \int_{-\infty}^{+\infty} x f(x) \mbox{d}x\]</span> lorsque cette intégrale existe.
+</div>
+ 
+<div class="theorem">
+<span id="thm:unnamed-chunk-50" class="theorem"><strong>Théorème 4.2  </strong></span>Si <span class="math inline">\(X\)</span> et <span class="math inline">\(g(X)\)</span> sont des variables aléatoires, alors <span class="math display">\[\mathbb{E}g(X) = \int_{-\infty}^{+\infty} g(x) f(x) \mbox{d}x\]</span>
+</div>
+ 
+<div class="lemma">
+<span id="lem:unnamed-chunk-51" class="lemma"><strong>Lemme 4.5  </strong></span>Si <span class="math inline">\(X\)</span> admet une densité nulle sur <span class="math inline">\(\mathbb{R}^-\)</span> et une fonction de répartition <span class="math inline">\(F\)</span>, alors <span class="math display">\[\mathbb{E}X = \int_0^{+\infty} (1-F(x)) \mbox{d}x = \int_0^{+\infty} \mathbb{P}(X&gt;x) \mbox{d}x\]</span>
+</div>
+<p> Les autres propriétés de l’espérance, vues dans le chapitre sur les variables aléatoires discrètes, s’étendent sans difficultés aux variables continues (moments, moments centrés, variance, covariance, corrélation).</p>
 </div>
 <div id="exemples-de-variables-aleatoires-continues" class="section level2">
-<h2><span class="header-section-number">4.4</span> Exemples de variables aléatoires continues</h2>
+<h2><span class="header-section-number">4.3</span> Exemples de variables aléatoires continues</h2>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-52" class="theorem"><strong>Théorème 4.3  </strong></span>L’espérance et la variance des lois continues de référence sont recensés dans le tableau ci-après :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Loi</th>
+<th align="center">Espérance</th>
+<th align="center">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\mathcal{U}(a,b)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{a+b}{2}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(b-a)^2}{12}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\mathcal{E}(\lambda)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{\lambda}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{\lambda^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\Gamma(k,\theta)\)</span></td>
+<td align="center"><span class="math inline">\(k \theta\)</span></td>
+<td align="center"><span class="math inline">\(k \theta^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span></td>
+<td align="center"><span class="math inline">\(\mu\)</span></td>
+<td align="center"><span class="math inline">\(\sigma^2\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
 </div>
 <div id="dependance-1" class="section level2">
-<h2><span class="header-section-number">4.5</span> Dépendance</h2>
+<h2><span class="header-section-number">4.4</span> Dépendance</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-53" class="definition"><strong>Définition 4.4  </strong></span>Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires réelles. Ces variables sont <strong>conjointement continues</strong> s’il existe une fonction positive <span class="math inline">\(f\)</span> telle que:</p>
+<span class="math display">\[F(x,y) = \mathbb{P}(X \leq x , Y \leq y) = \int_{-\infty}^x \int_{-\infty}^y f(u,v) \mbox{d}u \mbox{d}v\]</span> f est une densité du couple <span class="math inline">\((X,Y)\)</span>. Si <span class="math inline">\(F\)</span> est dérivable, on peut prendre <span class="math display">\[f = \frac{\partial^2 F}{\partial x \partial y}\]</span>
+</div>
+
+
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-54" class="lemma"><strong>Lemme 4.6  </strong></span>On a <span class="math display">\[
+  \mathbb{P}(a \leq X \leq b ; c \leq Y \leq d) = F(b,d) - F(a,d) - F(b,c)+F(a,c)
+  = \int_{a}^b \int_{c}^d f(u,v) \mbox{d}u \mbox{d}v
+\]</span> Plus généralement, si <span class="math inline">\(\mathcal{E}\)</span> est un évènement, on a:</p>
+<span class="math display">\[
+  \mathbb{P}\left( (X,Y) \in \mathcal{E} \right) = \iint_{\mathcal{E}} f(u,v) \mbox{d}u \mbox{d}v
+  \]</span>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-55" class="definition"><strong>Définition 4.5  </strong></span>Les <strong>fonctions de répartition marginales</strong> de <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont définies par <span class="math display">\[
+  F_X(x) = \mathbb{P}(X  \leq x) = \int_{-\infty}^x \int_{-\infty}^{+\infty} f(u,v) \mbox{d}u \mbox{d}v ; F_Y(y) = \mathbb{P}(Y  \leq y) = \int_{-\infty}^{+\infty} \int_{-\infty}^y  f(u,v) \mbox{d}u \mbox{d}v 
+  \]</span> On en déduit les <strong>densités marginales</strong> selon <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> : <span class="math display">\[
+  f_X(x) = \int_{-\infty}^{+\infty} f(x,y) \mbox{d}y ; f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \mbox{d}x
+  \]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-56" class="theorem"><strong>Théorème 4.4  </strong></span>Soit <span class="math inline">\(g : \mathbb{R}^2 \to \mathbb{R}\)</span> telle que <span class="math inline">\(g(X,Y)\)</span> soit une variable aléatoire. Alors, <span class="math display">\[
+  \mathbb{E} g(X,Y) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(u,v) f(u,v) \mbox{d}u \mbox{d}v
+  \]</span> dès que cette intégrale est définie.
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-57" class="theorem"><strong>Théorème 4.5  </strong></span>Les variables <span class="math inline">\(X,Y\)</span> sont indépendantes si et seulement si <span class="math display">\[F_{X,Y} = F_X F_Y \iff f_{X,Y} = f_x f_y.\]</span>
+</div>
+
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-58" class="theorem"><strong>Théorème 4.6  </strong></span>Soit <span class="math inline">\(X,Y\)</span> deux variables aléatoires continues. Alors <span class="math display">\[\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb{E} Y^2\right)\]</span> avec égalité si et seulement si il existe des réels <span class="math inline">\(\lambda,\mu\)</span> non tous nuls tels que <span class="math display">\[\mathbb{P}(\lambda X + \mu Y = 0) = 1.\]</span></p>
+</div>
+
 </div>
 <div id="loi-conditionnelle-et-esperance-conditionnelle-1" class="section level2">
-<h2><span class="header-section-number">4.6</span> Loi conditionnelle et espérance conditionnelle</h2>
+<h2><span class="header-section-number">4.5</span> Loi conditionnelle et espérance conditionnelle</h2>
 </div>
 <div id="fonctions-de-variables-aleatoires" class="section level2">
-<h2><span class="header-section-number">4.7</span> Fonctions de variables aléatoires</h2>
+<h2><span class="header-section-number">4.6</span> Fonctions de variables aléatoires</h2>
 </div>
 <div id="somme-de-variables-aleatoires" class="section level2">
-<h2><span class="header-section-number">4.8</span> Somme de variables aléatoires</h2>
+<h2><span class="header-section-number">4.7</span> Somme de variables aléatoires</h2>
 </div>
 <div id="la-loi-normale-multivariee-applications" class="section level2">
-<h2><span class="header-section-number">4.9</span> La loi normale multivariée, applications</h2>
+<h2><span class="header-section-number">4.8</span> La loi normale multivariée, applications</h2>
+<!-- -> khi2(d) = loi Gamma(1/2,d/2) -->
 <p><!-- = 4.9+4.10 --></p>
 
 </div>
