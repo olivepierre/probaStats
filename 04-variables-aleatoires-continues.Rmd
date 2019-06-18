@@ -137,6 +137,59 @@ L'espérance et la variance des lois continues de référence sont recensés dan
 
 ## Dépendance
 
+```{definition}
+Soient $X,Y$ deux variables aléatoires réelles.  Ces variables sont **conjointement continues** s'il existe une fonction positive $f$ telle que:
+  
+  $$F(x,y) = \mathbb{P}(X \leq x , Y \leq y) = \int_{-\infty}^x \int_{-\infty}^y f(u,v) \mbox{d}u \mbox{d}v$$
+  f est une densité du couple $(X,Y)$. Si $F$ est dérivable, on peut prendre
+  $$f = \frac{\partial^2 F}{\partial x \partial y}$$
+```
+
+```{lemma}
+On a
+$$
+  \mathbb{P}(a \leq X \leq b ; c \leq Y \leq d) = F(b,d) - F(a,d) - F(b,c)+F(a,c)
+  = \int_{a}^b \int_{c}^d f(u,v) \mbox{d}u \mbox{d}v
+$$
+  Plus généralement, si $\mathcal{E}$ est un évènement, on a:
+  
+  $$
+  \mathbb{P}\left( (X,Y) \in \mathcal{E} \right) = \iint_{\mathcal{E}} f(u,v) \mbox{d}u \mbox{d}v
+  $$
+```
+
+```{definition}
+Les **fonctions de répartition marginales** de $X$ et $Y$ sont définies par
+$$
+  F_X(x) = \mathbb{P}(X  \leq x) = \int_{-\infty}^x \int_{-\infty}^{+\infty} f(u,v) \mbox{d}u \mbox{d}v ; F_Y(y) = \mathbb{P}(Y  \leq y) = \int_{-\infty}^{+\infty} \int_{-\infty}^y  f(u,v) \mbox{d}u \mbox{d}v 
+  $$
+  On en déduit les **densités marginales** selon $X$ et $Y$ :
+  $$
+  f_X(x) = \int_{-\infty}^{+\infty} f(x,y) \mbox{d}y ; f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \mbox{d}x
+  $$
+```
+
+```{theorem}
+Soit $g : \mathbb{R}^2 \to \mathbb{R}$ telle que $g(X,Y)$ soit une variable aléatoire. Alors, 
+$$
+  \mathbb{E} g(X,Y) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(u,v) f(u,v) \mbox{d}u \mbox{d}v
+  $$ dès que cette intégrale est définie.
+```
+
+```{theorem}
+Les variables $X,Y$ sont indépendantes si et seulement si
+$$F_{X,Y} = F_X F_Y \iff f_{X,Y} = f_x f_y.$$
+```
+
+```{theorem}
+Soit $X,Y$ deux variables aléatoires continues. Alors 
+$$\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb{E} Y^2\right)$$
+  avec égalité si et seulement si il existe des réels $\lambda,\mu$ non tous nuls tels que 
+$$\mathbb{P}(\lambda X + \mu Y = 0) = 1.$$
+
+```
+
+
 ## Loi conditionnelle et espérance conditionnelle
 
 ## Fonctions de variables aléatoires
@@ -145,6 +198,6 @@ L'espérance et la variance des lois continues de référence sont recensés dan
 
 ## La loi normale multivariée, applications
 
--> khi2(d) = loi Gamma(1/2,d/2)
+<!-- -> khi2(d) = loi Gamma(1/2,d/2) -->
  <!-- = 4.9+4.10 -->
 
