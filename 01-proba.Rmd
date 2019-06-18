@@ -114,7 +114,7 @@ lorsque cette somme est absolument convergente.
 
 On peut ainsi calculer les moments pour tout ordre ($m_k = \mathbb{E} X^k$) ainsi que les moments centrés ($\sigma_k = \mathbb{E} (X - m_1)^k$). En particulier, on définit :
 ```{definition}
- Le moment d'ordre 1 s'appelle l'espérance de $X$, le moment centré d'ordre 2 de $X$ s'appelle la variance de $X$ (notée $\mathbb{V}X$) : c'est une quantité positive!
+ Le **moment d'ordre 1** s'appelle l'espérance de $X$, le **moment centré d'ordre 2** de $X$ s'appelle la variance de $X$ (notée $\mathbb{V}X$) : c'est une quantité positive!
  On appelle $\sigma = \sqrt{\sigma_2}$ l'écart-type de $X$.
  ```
 
@@ -176,10 +176,10 @@ $$\mathbb{E}X = \lambda , \mathbb{V}X = \lambda$$
 ## Dépendance
 
 ```{definition}
-Soient $X,Y$ deux variables aléatoires discrètes. La fonction de répartition jointe 
+Soient $X,Y$ deux variables aléatoires discrètes. La **fonction de répartition jointe** est définie par
 $$F(x,y) = \mathbb{P}(X \leq x , Y \leq y).$$
 
-La fonction de masse jointe est donnée par
+La **fonction de masse jointe** est donnée par
 $$ f(x,y) = \mathbb{P}(X=x, Y=y).$$
 ```
 
@@ -208,9 +208,9 @@ Soit $g$ une fonction telle que $g(X,Y)$ soit une variable aléatoire. Alors
 ```
 
 ```{definition}
-Soient $X,Y$ deux variables aléatoires. Leur covariance est définie par:
+Soient $X,Y$ deux variables aléatoires. Leur **covariance** est définie par:
   $$cov(X,Y) = \mathbb{E} \left[ (X- \mathbb{E}X) (Y - \mathbb{E}Y)\right] = \mathbb{E}XY - \mathbb{E}X \mathbb{E}Y.$$
-  Le coefficient de corrélation est :
+  Le **coefficient de corrélation** est :
   $$cor(X,Y) = \frac{cov(X,Y)}{\sqrt{\mathbb{V}X \mathbb{V}Y}}.$$
 ```
 
@@ -226,3 +226,52 @@ $$\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb
 $$\mathbb{P}(\lambda X + \mu Y = 0) = 1.$$
 ```
 
+
+## Loi conditionnelle et espérance conditionnelle
+
+Soient $X,Y$ deux variables aléatoires discrètes.
+```{definition}
+La **fonction de répartion conditionnelle** de $Y$ sachant $X=x$, notée $F_{Y|X}(\bullet | x)$ est définie par 
+$$
+ F_{Y|X}(y | x) = \mathbb{P}(Y \leq y | X=x)
+$$ pour tout $x$ tel que $\mathbb{P}(X=x)>0$.
+
+La **fonction de masse conditionnelle** de $Y$ sachant $X=x$, notée $f_{Y|X}(\bullet | x)$ est définie par 
+$$
+ f_{Y|X}(y | x) = \mathbb{P}(Y = y | X=x)
+$$ pour tout $x$ tel que $\mathbb{P}(X=x)>0$.
+```
+On a donc
+$$
+ f_{Y|X} = f_{X,Y} / f_X
+ $$
+ lorsque cette expression est définie. Encore, $f_{Y|X} = f_Y$ si et seulement si $X$ et $Y$ sont indépendantes.
+ 
+ ```{definition}
+ **L'espérance conditionnelle** de $Y$ par rapport à $X$ est définie comme
+ $$\mathbb{E}(Y | X=x) = \sum_y y f_{Y|X}(y | x)$$
+ ```
+
+```{theorem}
+On a :
+$$\mathbb{E} Y = \mathbb{E} \left( \mathbb{E}(Y | X)\right)$$
+ ```
+
+```{theorem}
+Pour toute fonction $g$ pour laquelle les sommes sont définies, on a :
+  $$\mathbb{E} \left(Y g(X)\right) = \mathbb{E} \left( g(X) \mathbb{E}(Y | X)\right)$$
+```
+
+## Somme de variables aléatoires discrètes
+Soient $X,Y$ deux variables aléatoires discrètes.
+```{theorem}
+La loi de $X+Y$ est définie par
+$$
+  \mathbb{P}(X+Y=z) = \sum_x f_{X,Y} (x,z-x)
+$$
+Si, en outre, $X$ et $Y$ sont indépendantes, alors
+$$
+  \mathbb{P}(X+Y=z) = \sum_x f_X(x) f_Y(z-x) = \sum_y f_X(z-y) f_Y(y)
+$$
+La fonction masse de $X+Y$ s'appelle alors le **produit de convolution** des fonctions masses de $X$ et $Y$, et est noté $f_X \star f_Y$. 
+```
