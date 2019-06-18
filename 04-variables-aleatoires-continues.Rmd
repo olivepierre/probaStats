@@ -2,11 +2,138 @@
 
 ## densités de probabilités
 
+```{definition}
+Une variable aléatoire réelle $X$ est dite **continue** s'il existe une fonction f positive telle que 
+$$F_X(x) = \int_{-\infty}^x f(t) \mbox{d}t$$
+Une telle fonction est une **densité** de $X$. Cette densité n'est pas unique.
+Une telle densité est généralement notée $f_X$.
+
+Lorsque $F_X$ est dérivable, $F_X'$ est une densité de $X$. 
+```
+
+```{lemma}
+Si $X$ admet $f$ comme densité, alors:
+  
+- $\int_{-\infty}^{+\infty} f(x) \mbox{d}x = 1$;
+
+- $\mathbb{P}(X=x)=0, \forall x \in \mathbb{R}$;
+
+- $\mathbb{P}(X \in \mathcal{E}) = \int_{\mathcal{E}} f(x) \mbox{d}x$ pour tout évènement $\mathcal{E}$;
+
+- $X$ et $-X$ ont les mêmes distributions si et seulement si $f_X$ est paire;
+
+- Si $f$ et $g$ sont des densités, il en est de même pour $\lambda f + (1-\lambda)g$ pour $0 \leq \lambda \leq 1$.
+```
+
+```{example}
+Soient $a,b$ deux réels avec $a<b$. La **loi uniforme** sur l'intervalle $[a,b]$ est définie par sa densité de probabilité
+$$
+f(x) = \left\lbrace
+\begin{array}{ccc}
+\frac{1}{b-a}  & \mbox{si} & a \leq x \leq b\\
+0 & \mbox{sinon} &\\
+\end{array}\right.
+$$
+On note cette loi $\mathcal{U}(a,b)$.
+```
+
+```{example}
+La **loi exponentielle** modélise la durée de vie d'un phénomène sans mémoire : la probabilité que le phénomène dure au moins $s+t$ sachant qu'il a déjà duré $t$ est la même que la probabilié de durer $s$ à partir de la mise en fonction initiale.
+
+Soit $\lambda > 0$. La densité associée à cette loi est :
+ $$
+f(t) = \left\lbrace
+\begin{array}{ccc}
+\lambda e^{-\lambda t}  & \mbox{si} & t>0\\
+0 & \mbox{sinon} &\\
+\end{array}\right.
+$$
+On note la loi exponentielle de paramètre $\lambda$ : $\mathcal{E}(\lambda)$.
+```
+```{lemma}
+Soient $X,Y$ deux variables aléatoires qui suivent deux lois exponentielles, de paramètres $\lambda, \mu$, alors $\min (X,Y)$ suit encore une loi exponentielle, de paramètre $\lambda + \mu$.
+
+```
+
+```{example}
+La loi **Gamma** (qui généralise la loi exponentielle) modélise également des durées; elle est caractérisée par deux paramètres $k,\theta$ positifs.
+
+Sa densité est
+$$ f(t) = \left\lbrace
+\begin{array}{ccc}
+\frac{t^{k-1} \exp \left(-\frac{t}{\theta} \right)}{\theta^k \Gamma (k)}   & \mbox{si} & x>0\\
+0 & \mbox{sinon} & \\
+\end{array}\right.
+$$
+où $\Gamma$ désigne la fonction Gamma d'Euler ($\Gamma : z \mapsto \int_0^{+\infty} t^{z-1} e^{-t} \mbox{d}t$).  
+
+On note cette  loi $\Gamma(k,\theta)$. 
+```
+
+```{lemma}
+Soient $X_1, \ldots, X_n$ des variables aléatoires indépendantes, de loi $\Gamma(k_1,\theta),\ldots,\Gamma(k_n,\theta)$. Alors $X_1+\ldots+X_n$ suit une loi $\Gamma(\sum_{i=1}^n k_i,\theta)$.
+```
+
+```{lemma}
+Soit $X  \sim \Gamma(k,\theta)$ et $t>0$. Alors $tX \sim \Gamma(k,t \theta)$.
+```
+
+
+```{example}
+La **loi normale** est définie suivant deux paramètres ($\mu \in \mathbb{R}, \sigma >0$) par sa densité:
+  
+  $$
+  f(x) = \frac{1}{\sigma \sqrt{2 \pi}} \exp \left(-\frac{(x-\mu)^2}{2 \sigma^2}\right)
+  $$
+  On note la loi $\mathcal{N}(\mu,\sigma^2)$.
+```
+
+```{example}
+Soit $X$ une variable aléatoire qui suit une loi normale $\mathcal{N}(\mu,\sigma^2)$. Alors $\exp(X)$ suit une loi **log-normale**.
+```
+
 ## Indépendance
+
+```{definition}
+Soient  $X,Y$ deux variables aléatoires réelles.
+On dit que les variables aléatoires $X$ et $Y$ sont **indépendantes** si les évènements $\lbrace X  \leq x \rbrace$ et $\lbrace Y \leq y \rbrace$ sont indépendants pour tous $x,y$ réels.
+```
+
+```{theorem}
+Soient $X,Y$ deux variables aléatoires, $f,g$ deux fonctions telles que $f(X), g(Y)$ soient des variables aléatoires.
+
+Si $X$ et $Y$ sont indépendantes, il en est de même pour $f(X)$ et $g(Y)$.```
 
 ## Espérance
 
+```{definition}
+**L'espérance** d'une variable aléatoire $X$ de densité $f$ est définie par
+$$\mathbb{E}X = \int_{-\infty}^{+\infty} x f(x) \mbox{d}x$$
+  lorsque cette intégrale existe.
+```
+```{theorem}
+Si $X$ et $g(X)$ sont des variables aléatoires, alors
+$$\mathbb{E}g(X) = \int_{-\infty}^{+\infty} g(x) f(x) \mbox{d}x$$
+```
+```{lemma}
+Si $X$ admet une densité nulle sur $\mathbb{R}^-$ et une fonction de répartition $F$, alors
+$$\mathbb{E}X = \int_0^{+\infty} (1-F(x)) \mbox{d}x = \int_0^{+\infty} \mathbb{P}(X>x) \mbox{d}x$$
+```
+Les autres propriétés de l'espérance, vues dans le chapitre sur les variables aléatoires discrètes, s'étendent sans difficultés aux variables continues (moments, moments centrés, variance, covariance, corrélation).
+
 ## Exemples de variables aléatoires continues
+
+```{theorem}
+L'espérance et la variance des lois continues de référence sont recensés dans le tableau ci-après :
+
+|Loi                        | Espérance        | Variance|
+|:---------------------------:|:------------------:|:---------:|
+|$\mathcal{U}(a,b)$         | $\frac{a+b}{2}$  |$\frac{(b-a)^2}{12}$|
+|$\mathcal{E}(\lambda)$     |$\frac{1}{\lambda}$|$\frac{1}{\lambda^2}$|
+|$\Gamma(k,\theta)$         |$k \theta$        |$k \theta^2$|
+|$\mathcal{N}(\mu,\sigma^2)$|$\mu$             |$\sigma^2$|
+
+```
 
 ## Dépendance
 
@@ -17,5 +144,7 @@
 ## Somme de variables aléatoires
 
 ## La loi normale multivariée, applications
+
+-> khi2(d) = loi Gamma(1/2,d/2)
  <!-- = 4.9+4.10 -->
 

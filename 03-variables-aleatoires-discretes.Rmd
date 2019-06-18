@@ -243,7 +243,7 @@ Pour toute fonction $g$ pour laquelle les sommes sont définies, on a :
 ```
 ```{definition}
 La **variance conditionnelle** de $Y$ sachant $X$ est définie par
-$$\mathbb{V}(Y | X) = \mathbb{E} \left( [Y- \mathbb{E}(Y | X)]^2  | X\right).$$)
+$$\mathbb{V}(Y | X) = \mathbb{E} \left( [Y- \mathbb{E}(Y | X)]^2  | X\right).$$
 ```
 La variance conditionnelle est liée à l'espérance conditionnelle par le théorème :
 
