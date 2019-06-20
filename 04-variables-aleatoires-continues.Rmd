@@ -188,8 +188,6 @@ $$\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb
 $$\mathbb{P}(\lambda X + \mu Y = 0) = 1.$$
 
 ```
-
-
 ## Loi conditionnelle et espérance conditionnelle
 
 ## Fonctions de variables aléatoires
