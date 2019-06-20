@@ -89,9 +89,8 @@
 <li class="chapter" data-level="4.2" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#independance-2"><i class="fa fa-check"></i><b>4.2</b> Indépendance</a></li>
 <li class="chapter" data-level="4.3" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#exemples-de-variables-aleatoires-continues"><i class="fa fa-check"></i><b>4.3</b> Exemples de variables aléatoires continues</a></li>
 <li class="chapter" data-level="4.4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#dependance-1"><i class="fa fa-check"></i><b>4.4</b> Dépendance</a></li>
-<li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#fonctions-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.5</b> Fonctions de variables aléatoires</a></li>
-<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.6</b> Somme de variables aléatoires</a></li>
-<li class="chapter" data-level="4.7" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee-applications"><i class="fa fa-check"></i><b>4.7</b> La loi normale multivariée, applications</a></li>
+<li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.5</b> Somme de variables aléatoires</a></li>
+<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee-applications"><i class="fa fa-check"></i><b>4.6</b> La loi normale multivariée, applications</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
@@ -317,15 +316,62 @@ On note cette loi <span class="math inline">\(\Gamma(k,\theta)\)</span>.
 <p><span id="thm:unnamed-chunk-58" class="theorem"><strong>Théorème 4.6  </strong></span>Soit <span class="math inline">\(X,Y\)</span> deux variables aléatoires continues. Alors <span class="math display">\[\left( \mathbb{E}XY \right)^2 \leq \left( \mathbb{E} X^2\right) \left( \mathbb{E} Y^2\right)\]</span> avec égalité si et seulement si il existe des réels <span class="math inline">\(\lambda,\mu\)</span> non tous nuls tels que <span class="math display">\[\mathbb{P}(\lambda X + \mu Y = 0) = 1.\]</span></p>
 </div>
 <p> ## Loi conditionnelle et espérance conditionnelle</p>
+Soient <span class="math inline">\(X,Y\)</span> deux variables aléatoires continues, de densité jointe <span class="math inline">\(f\)</span>. 
+<div class="definition">
+<p><span id="def:unnamed-chunk-59" class="definition"><strong>Définition 4.6  </strong></span>La <strong>fonction de répartition conditionnelle</strong> de <span class="math inline">\(Y\)</span> sachant <span class="math inline">\(X=x\)</span> est définie par</p>
+<span class="math display">\[
+F_{Y|X}(y|x) = \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} \mbox{d}v  
+\]</span> pour tout <span class="math inline">\(x\)</span> tel que <span class="math inline">\(f_X(x)&gt;0\)</span>. Elle est également notée <span class="math display">\[\mathbb{P}(Y \leq y | X = x)\]</span>
 </div>
-<div id="fonctions-de-variables-aleatoires" class="section level2">
-<h2><span class="header-section-number">4.5</span> Fonctions de variables aléatoires</h2>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-60" class="definition"><strong>Définition 4.7  </strong></span>La <strong>densité conditionnelle</strong> de <span class="math inline">\(Y\)</span> sachant <span class="math inline">\(X=x\)</span> est définie par</p>
+<span class="math display">\[
+f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)} 
+\]</span> pour tout <span class="math inline">\(x\)</span> tel que <span class="math inline">\(f_X(x)&gt;0\)</span>. Encore, <span class="math display">\[
+  f_{Y|X} = \frac{f_{X,Y}}{f_X} 
+\]</span>
+</div>
+
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-61" class="theorem"><strong>Théorème 4.7  </strong></span><strong>L’espérance conditionnelle</strong> de <span class="math inline">\(Y\)</span> sachant <span class="math inline">\(X\)</span> est définie comme <span class="math display">\[\mathbb{E}(Y|X=x) = \int_{-\infty}^{+\infty} y f_{Y|X}(y|x) \mbox{d}y ;\]</span> Elle vérifie la relation <span class="math display">\[
+\mathbb{E} \left(\mathbb{E}(Y|X) \right) = \mathbb{E} Y .
+\]</span> Plus généralement, pour toute fonction <span class="math inline">\(g\)</span> pour laquelle l’expression a un sens, on a : <span class="math display">\[
+\mathbb{E}  \left(g(X) \mathbb{E}(Y|X) \right) = \mathbb{E} Y g(X) .
+\]</span>
+</div>
+<p> ## Fonctions de variables aléatoires</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-62" class="theorem"><strong>Théorème 4.8  </strong></span>Soit <span class="math inline">\(X\)</span> une variable aléatoire avec une densité <span class="math inline">\(f\)</span>, et soit <span class="math inline">\(g\)</span> une fonction réelle telle que <span class="math inline">\(Y = g(X)\)</span> soit encore une variable aléatoire. La fonction de répartition de <span class="math inline">\(Y\)</span> est définie par : <span class="math display">\[
+  \mathbb{P}(Y \leq y) = \mathbb{P} \left(X \in g^{-1}(]-\infty , y]) \right) .
+  \]</span>
+</div>
+ Plus généralement, on a le théorème suivant: 
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-63" class="theorem"><strong>Théorème 4.9  </strong></span>Soient <span class="math inline">\(\mathcal{U}, \mathcal{V}\)</span> deux ouverts de <span class="math inline">\(\mathbb{R}^d\)</span>, Soit <span class="math inline">\(X\)</span> une variable aléatoire à valeurs dans <span class="math inline">\(\mathcal{U}\)</span> de densité <span class="math inline">\(f\)</span> et soit <span class="math inline">\(T\)</span> un difféomorphisme de classe <span class="math inline">\(\mathcal{C}^1 : \mathcal {U} \to \mathcal{V}\)</span>. La densité de la variable aléatoire <span class="math inline">\(Y = \varphi(X)\)</span> est définie par :</p>
+<span class="math display">\[
+f_Y(y) = \left\lbrace
+\begin{array}{ccc}
+f_X(\varphi^{-1}(y)) |J_{\varphi^{-1}}(y)|  &amp; \mbox{si} &amp; y \in \mathcal{V}\\
+0 &amp; \mbox{sinon} &amp;\\
+\end{array}\right.
+\]</span> en notant <span class="math inline">\(|J_{\varphi^{-1}}(y)|\)</span> le déterminant du jacobien de <span class="math inline">\(\varphi^{-1}\)</span>, c’est-à-dire de la matrice de terme général <span class="math inline">\(\left(\frac{\partial \varphi^{-1}_j}{ \partial y_i} \right)_{i,j}\)</span>.
+</div>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-64" class="lemma"><strong>Lemme 4.7  </strong></span>Pour <span class="math inline">\(d=2\)</span>, le changement de variables “passage en coordonnées polaires” transforme une densité <span class="math inline">\(f(x,y)\)</span> en <span class="math inline">\(f(r \cos \theta, r \sin \theta) r\)</span>.
+</div>
+
 </div>
 <div id="somme-de-variables-aleatoires" class="section level2">
-<h2><span class="header-section-number">4.6</span> Somme de variables aléatoires</h2>
+<h2><span class="header-section-number">4.5</span> Somme de variables aléatoires</h2>
 </div>
 <div id="la-loi-normale-multivariee-applications" class="section level2">
-<h2><span class="header-section-number">4.7</span> La loi normale multivariée, applications</h2>
+<h2><span class="header-section-number">4.6</span> La loi normale multivariée, applications</h2>
 <!-- -> khi2(d) = loi Gamma(1/2,d/2) -->
 <p><!-- = 4.9+4.10 --></p>
 
