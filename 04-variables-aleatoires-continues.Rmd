@@ -190,6 +190,39 @@ $$\mathbb{P}(\lambda X + \mu Y = 0) = 1.$$
 ```
 ## Loi conditionnelle et espérance conditionnelle
 
+Soient $X,Y$ deux variables aléatoires continues, de densité jointe $f$.
+```{definition}
+La **fonction de répartition conditionnelle** de $Y$ sachant $X=x$ est définie par
+
+$$
+F_{Y|X}(y|x) = \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} \mbox{d}v  
+$$  pour tout $x$ tel que $f_X(x)>0$. Elle est également notée
+$$\mathbb{P}(Y \leq y | X = x)$$
+```
+
+```{definition}
+La **densité conditionnelle** de $Y$ sachant $X=x$ est définie par
+
+$$
+f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)} 
+$$  pour tout $x$ tel que $f_X(x)>0$. Encore,
+$$
+  f_{Y|X} = \frac{f_{X,Y}}{f_X} 
+$$
+```
+
+```{theorem}
+**L'espérance conditionnelle** de $Y$ sachant $X$ est définie comme
+$$\mathbb{E}(Y|X=x) = \int_{-\infty}^{+\infty} y f_{Y|X}(y|x) \mbox{d}y ;$$
+Elle vérifie la relation
+$$
+\mathbb{E} \left(\mathbb{E}(Y|X) \right) = \mathbb{E} Y .
+$$
+Plus généralement, pour toute fonction $g$ pour laquelle l'expression a un sens, on a :
+  $$
+\mathbb{E} g(X) \left(\mathbb{E}(Y|X) \right) = \mathbb{E} Y g(X) .
+$$
+```
 ## Fonctions de variables aléatoires
 
 ## Somme de variables aléatoires
