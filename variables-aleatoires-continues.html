@@ -90,7 +90,8 @@
 <li class="chapter" data-level="4.3" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#exemples-de-variables-aleatoires-continues"><i class="fa fa-check"></i><b>4.3</b> Exemples de variables aléatoires continues</a></li>
 <li class="chapter" data-level="4.4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#dependance-1"><i class="fa fa-check"></i><b>4.4</b> Dépendance</a></li>
 <li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.5</b> Somme de variables aléatoires</a></li>
-<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee-applications"><i class="fa fa-check"></i><b>4.6</b> La loi normale multivariée, applications</a></li>
+<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee"><i class="fa fa-check"></i><b>4.6</b> La loi normale multivariée</a></li>
+<li class="chapter" data-level="4.7" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#lois-issues-de-la-loi-normale"><i class="fa fa-check"></i><b>4.7</b> Lois issues de la loi normale</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
@@ -369,11 +370,59 @@ f_X(\varphi^{-1}(y)) |J_{\varphi^{-1}}(y)|  &amp; \mbox{si} &amp; y \in \mathcal
 </div>
 <div id="somme-de-variables-aleatoires" class="section level2">
 <h2><span class="header-section-number">4.5</span> Somme de variables aléatoires</h2>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-65" class="theorem"><strong>Théorème 4.10  </strong></span>Si <span class="math inline">\(X,Y\)</span> ont pour densité jointe <span class="math inline">\(f\)</span>, alors la densité de <span class="math inline">\(Z = X+Y\)</span> est définie par:</p>
+<span class="math display">\[
+  f_Z(z) = \int_{-\infty}^{+\infty} f(x,z-x) \mbox{d}x
+  \]</span> Si, <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont indépendantes, le résultat devient : <span class="math display">\[
+  f_Z(z) = \int_{-\infty}^{+\infty} f_X(z-y) f_Y(y) \mbox{d}y = \int_{-\infty}^{+\infty} f_X(x) f_Y(z-x) \mbox{d}x
+  \]</span> On dit que <span class="math inline">\(f_Z\)</span> est le <strong>produit de convolution</strong> de <span class="math inline">\(f_X\)</span> et <span class="math inline">\(f_Y\)</span>, noté <span class="math inline">\(f_X \star f_Y\)</span>.
 </div>
-<div id="la-loi-normale-multivariee-applications" class="section level2">
-<h2><span class="header-section-number">4.6</span> La loi normale multivariée, applications</h2>
-<!-- -> khi2(d) = loi Gamma(1/2,d/2) -->
-<p><!-- = 4.9+4.10 --></p>
+
+
+<div class="lemma">
+<span id="lem:unnamed-chunk-66" class="lemma"><strong>Lemme 4.8  </strong></span>Soit <span class="math inline">\(X \sim \mathcal{N}(\mu_1,\sigma_1^2)\)</span> et <span class="math inline">\(Y \sim \mathcal{N}(\mu_2,\sigma_2^2)\)</span>. Supposons que <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> sont indépendantes. Alors <span class="math inline">\(X+Y \sim \mathcal{N}(\mu_1 + \mu_2,\sigma_1^2 + \sigma_2^2)\)</span>.
+</div>
+
+</div>
+<div id="la-loi-normale-multivariee" class="section level2">
+<h2><span class="header-section-number">4.6</span> La loi normale multivariée</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-67" class="definition"><strong>Définition 4.8  </strong></span>Le vecteur <span class="math inline">\(X = (X_1, \ldots, X_n)\)</span> suit une <strong>loi normale multivariée</strong> (notée <span class="math inline">\(\mathcal{N}(\mu,\Sigma)\)</span>) s’il existe un vecteur <span class="math inline">\(\mu = (\mu_1,\ldots,\mu_n)\)</span> de réels et une matrice symétrique définie positive <span class="math inline">\(\Sigma\)</span> telle que la densité jointe de <span class="math inline">\(X\)</span> soit:</p>
+<p><span class="math display">\[f_X(x) = \frac{1}{\sqrt{(2\pi)^n |\Sigma|}} \exp \left( 
+-\frac12 (x-\mu)\Sigma^{-1}(x-\mu)&#39;
+\right)\]</span></p>
+De façon équivalente, on dit que le vecteur <span class="math inline">\(X\)</span> suit une loi normale multivariée si et seulement si pour tout vecteur <span class="math inline">\(a \in \mathbb{R}^n\)</span>, <span class="math inline">\(Xa&#39;\)</span> suit une loi normale.
+</div>
+
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-68" class="theorem"><strong>Théorème 4.11  </strong></span>Si <span class="math inline">\(X\)</span> suit une loi <span class="math inline">\(\mathcal{N}(\mu,\Sigma)\)</span>, alors</p>
+<ul>
+<li><p><span class="math inline">\(\mathbb{E}X = \mu\)</span></p></li>
+<li><p>la matrice <span class="math inline">\(\Sigma\)</span> est la matrice de covariance de <span class="math inline">\(X\)</span>: <span class="math display">\[\Sigma_{i,j} = \text{cov} (X_i,X_j)\]</span></p></li>
+<li>Si <span class="math inline">\(A\)</span> est une matrice de rang <span class="math inline">\(m \leq n\)</span>, alors <span class="math inline">\(XA\)</span> suit la loi <span class="math inline">\(\mathcal{N}(\mu A,A&#39; \Sigma A)\)</span>
+</div>
+</li>
+</ul>
+</div>
+<div id="lois-issues-de-la-loi-normale" class="section level2">
+<h2><span class="header-section-number">4.7</span> Lois issues de la loi normale</h2>
+<p>On dispose de variables aléatoires correspondants aux résultats d’un même expérience aléatoire <span class="math inline">\(X_1,\ldots,X_n\)</span> dont on suppose qu’elle sont de loi normale <span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span> pour des quantités <span class="math inline">\(\mu,\sigma\)</span> non observée. On cherche à estimer ces quantités. Pour celà, on va considérer la moyenne empirique <span class="math display">\[\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i\]</span> comme estimateur de <span class="math inline">\(\mu\)</span> et la variance empirique <span class="math display">\[S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2\]</span> comme estimateur de <span class="math inline">\(\sigma^2\)</span>.</p>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-69" class="theorem"><strong>Théorème 4.12  </strong></span>Soit <span class="math inline">\(X_1,\ldots,X_n\)</span> des variables aléatoires indépendantes, de même loi <span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(\overline{X}\)</span> et <span class="math inline">\(S^2\)</span> sont indépendants;</p></li>
+<li><p><span class="math inline">\(\overline{X} \sim \mathcal{N}(\mu,\sigma^2 / n)\)</span></p></li>
+<li><span class="math inline">\((n-1)S^2/\sigma^2 \sim \Gamma(\frac12, \frac{n-1}{2})\)</span>. Cette dernière loi s’appelle la <strong>loi du <span class="math inline">\(\chi^2\)</span> à <span class="math inline">\(n-1\)</span> degrés de liberté</strong>, notée <span class="math inline">\(\chi^2(n-1)\)</span> ; c’est la loi de la somme des carrés de <span class="math inline">\(n-1\)</span> lois normales centrées réduites indépendantes.</li>
+<li><p>Les variables aléatoires <span class="math display">\[ U = \frac{n-1}{\sigma^2}S^2 \sim \chi^2(n-1)\]</span> et <span class="math display">\[V = \frac{\sqrt{n}}{\sigma}(\overline{X}-\mu) \sim \mathcal{N}(0,1).\]</span> Elles ne dépendent pas de <span class="math inline">\(\sigma\)</span>. Le ratio <span class="math display">\[T = \frac{V}{\sqrt{U/(n-1)}}\]</span> dont le numérateur suit <span class="math inline">\(\mathcal{N}(0,1)\)</span> et le dénominateur est la racine d’un <span class="math inline">\(\chi^2(n-1)\)</span>, divisé par <span class="math inline">\(n-1\)</span> suit une <strong>loi de Student</strong>, de paramètre <span class="math inline">\(n-1\)</span>, notée <span class="math inline">\(t(n-1)\)</span>.</p></li>
+<li>Soient <span class="math inline">\(U,V\)</span> deux variables aléatoires qui suivent respectivement les lois <span class="math inline">\(\chi^2(r)\)</span> et <span class="math inline">\(\chi^2(s)\)</span>, alors <span class="math display">\[F = \frac{U/r}{V/s}\]</span> suit une <strong>loi de Fisher</strong> de paramètres <span class="math inline">\((r,s)\)</span>, notée <span class="math inline">\(F(r,s)\)</span>. Dans ce cas, <span class="math inline">\(1/F\)</span> suit la loi <span class="math inline">\(F(s,r)\)</span> et si <span class="math inline">\(T \sim t(r)\)</span>, <span class="math inline">\(T^2 \sim F(1,r)\)</span>
+</div>
+</li>
+</ul>
 
 </div>
 </div>
