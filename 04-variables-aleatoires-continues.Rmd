@@ -254,8 +254,74 @@ Pour $d=2$, le changement de variables "passage en coordonnées polaires" transf
 
 ## Somme de variables aléatoires
 
-## La loi normale multivariée, applications
+```{theorem}
+Si $X,Y$ ont pour densité jointe $f$, alors la densité de $Z = X+Y$ est définie par:
+  
+  $$
+  f_Z(z) = \int_{-\infty}^{+\infty} f(x,z-x) \mbox{d}x
+  $$
+  Si, $X$ et $Y$ sont indépendantes, le résultat devient :
+   $$
+  f_Z(z) = \int_{-\infty}^{+\infty} f_X(z-y) f_Y(y) \mbox{d}y = \int_{-\infty}^{+\infty} f_X(x) f_Y(z-x) \mbox{d}x
+  $$
+  On dit que $f_Z$ est le **produit de convolution** de $f_X$ et $f_Y$, noté
+$f_X \star f_Y$.
+```
 
-<!-- -> khi2(d) = loi Gamma(1/2,d/2) -->
- <!-- = 4.9+4.10 -->
+```{lemma}
+Soit $X \sim \mathcal{N}(\mu_1,\sigma_1^2)$ et $Y \sim \mathcal{N}(\mu_2,\sigma_2^2)$. Supposons que $X$ et $Y$ sont indépendantes. Alors
+$X+Y \sim \mathcal{N}(\mu_1 + \mu_2,\sigma_1^2 + \sigma_2^2)$.
+```
+
+## La loi normale multivariée
+
+```{definition}
+Le vecteur $X = (X_1, \ldots, X_n)$ suit une **loi normale multivariée** (notée $\mathcal{N}(\mu,\Sigma)$) s'il existe un vecteur $\mu = (\mu_1,\ldots,\mu_n)$ de réels et une matrice symétrique définie positive $\Sigma$ telle que la densité jointe de $X$ soit:
+
+$$f_X(x) = \frac{1}{\sqrt{(2\pi)^n |\Sigma|}} \exp \left( 
+-\frac12 (x-\mu)\Sigma^{-1}(x-\mu)'
+\right)$$
+  
+De façon équivalente, on dit que le vecteur $X$ suit une loi normale multivariée si et seulement si pour tout vecteur $a \in \mathbb{R}^n$, $Xa'$ suit une loi normale.  
+```
+
+```{theorem}
+Si $X$ suit une loi $\mathcal{N}(\mu,\Sigma)$, alors
+
+- $\mathbb{E}X = \mu$
+  
+-  la matrice $\Sigma$ est la matrice de covariance de $X$:
+  $$\Sigma_{i,j} = \text{cov} (X_i,X_j)$$
+  
+- Si $A$ est une matrice de rang $m \leq n$, alors $XA$ suit la loi $\mathcal{N}(\mu A,A' \Sigma A)$
+```
+
+## Lois issues de la loi normale
+
+On dispose de variables aléatoires correspondants aux résultats d'un même expérience aléatoire $X_1,\ldots,X_n$ dont on suppose qu'elle sont de loi normale $\mathcal{N}(\mu,\sigma^2)$ pour des quantités $\mu,\sigma$ non observée. On cherche à estimer ces quantités. Pour celà, on va considérer la moyenne empirique 
+$$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i$$
+comme estimateur de $\mu$ et la variance empirique
+$$S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2$$
+comme estimateur de $\sigma^2$.
+
+```{theorem}
+Soit $X_1,\ldots,X_n$ des variables aléatoires indépendantes, de même loi $\mathcal{N}(\mu,\sigma^2)$.
+
+- $\overline{X}$ et $S^2$ sont indépendants;
+
+- $\overline{X} \sim \mathcal{N}(\mu,\sigma^2 / n)$
+
+- $(n-1)S^2/\sigma^2 \sim \Gamma(\frac12, \frac{n-1}{2})$. Cette dernière loi s'appelle la **loi du $\chi^2$ à $n-1$ degrés de liberté**, notée $\chi^2(n-1)$ ;
+c'est la loi de la somme des carrés de $n-1$ lois normales centrées réduites indépendantes.
+- Les variables aléatoires
+$$ U = \frac{n-1}{\sigma^2}S^2 \sim \chi^2(n-1)$$ et
+$$V = \frac{\sqrt{n}}{\sigma}(\overline{X}-\mu) \sim \mathcal{N}(0,1).$$
+Elles ne dépendent pas de $\sigma$. Le ratio 
+$$T = \frac{V}{\sqrt{U/(n-1)}}$$
+  dont le numérateur suit $\mathcal{N}(0,1)$ et le dénominateur est la racine d'un $\chi^2(n-1)$, divisé par $n-1$ suit une **loi de Student**, de paramètre $n-1$, notée $t(n-1)$.
+  
+- Soient $U,V$ deux variables aléatoires qui suivent respectivement les lois $\chi^2(r)$ et $\chi^2(s)$, alors
+$$F = \frac{U/r}{V/s}$$
+suit une **loi de Fisher** de paramètres $(r,s)$, notée $F(r,s)$. Dans ce cas, $1/F$ suit la loi $F(s,r)$ et si $T \sim t(r)$, $T^2 \sim F(1,r)$
+```
 
