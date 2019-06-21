@@ -139,10 +139,10 @@ Lorsque <span class="math inline">\(F_X\)</span> est dérivable, <span class="ma
 <li><p><span class="math inline">\(\mathbb{P}(X=x)=0, \forall x \in \mathbb{R}\)</span>;</p></li>
 <li><p><span class="math inline">\(\mathbb{P}(X \in \mathcal{E}) = \int_{\mathcal{E}} f(x) \mbox{d}x\)</span> pour tout évènement <span class="math inline">\(\mathcal{E}\)</span>;</p></li>
 <li><p><span class="math inline">\(X\)</span> et <span class="math inline">\(-X\)</span> ont les mêmes distributions si et seulement si <span class="math inline">\(f_X\)</span> est paire;</p></li>
-<li>Si <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> sont des densités, il en est de même pour <span class="math inline">\(\lambda f + (1-\lambda)g\)</span> pour <span class="math inline">\(0 \leq \lambda \leq 1\)</span>.
-</div>
-</li>
+<li>Si <span class="math inline">\(f\)</span> et <span class="math inline">\(g\)</span> sont des densités, il en est de même pour <span class="math inline">\(\lambda f + (1-\lambda)g\)</span> pour <span class="math inline">\(0 \leq \lambda \leq 1\)</span>.</li>
 </ul>
+</div>
+
 
 <div class="example">
 <span id="exm:unnamed-chunk-39" class="example"><strong>Exemple 4.1  </strong></span>Soient <span class="math inline">\(a,b\)</span> deux réels avec <span class="math inline">\(a&lt;b\)</span>. La <strong>loi uniforme</strong> sur l’intervalle <span class="math inline">\([a,b]\)</span> est définie par sa densité de probabilité <span class="math display">\[
@@ -403,10 +403,10 @@ De façon équivalente, on dit que le vecteur <span class="math inline">\(X\)</s
 <ul>
 <li><p><span class="math inline">\(\mathbb{E}X = \mu\)</span></p></li>
 <li><p>la matrice <span class="math inline">\(\Sigma\)</span> est la matrice de covariance de <span class="math inline">\(X\)</span>: <span class="math display">\[\Sigma_{i,j} = \text{cov} (X_i,X_j)\]</span></p></li>
-<li>Si <span class="math inline">\(A\)</span> est une matrice de rang <span class="math inline">\(m \leq n\)</span>, alors <span class="math inline">\(XA\)</span> suit la loi <span class="math inline">\(\mathcal{N}(\mu A,A&#39; \Sigma A)\)</span>
-</div>
-</li>
+<li>Si <span class="math inline">\(A\)</span> est une matrice de rang <span class="math inline">\(m \leq n\)</span>, alors <span class="math inline">\(XA\)</span> suit la loi <span class="math inline">\(\mathcal{N}(\mu A,A&#39; \Sigma A)\)</span></li>
 </ul>
+</div>
+
 </div>
 <div id="lois-issues-de-la-loi-normale" class="section level2">
 <h2><span class="header-section-number">4.7</span> Lois issues de la loi normale</h2>
@@ -419,10 +419,10 @@ De façon équivalente, on dit que le vecteur <span class="math inline">\(X\)</s
 <li><p><span class="math inline">\(\overline{X} \sim \mathcal{N}(\mu,\sigma^2 / n)\)</span></p></li>
 <li><span class="math inline">\((n-1)S^2/\sigma^2 \sim \Gamma(\frac12, \frac{n-1}{2})\)</span>. Cette dernière loi s’appelle la <strong>loi du <span class="math inline">\(\chi^2\)</span> à <span class="math inline">\(n-1\)</span> degrés de liberté</strong>, notée <span class="math inline">\(\chi^2(n-1)\)</span> ; c’est la loi de la somme des carrés de <span class="math inline">\(n-1\)</span> lois normales centrées réduites indépendantes.</li>
 <li><p>Les variables aléatoires <span class="math display">\[ U = \frac{n-1}{\sigma^2}S^2 \sim \chi^2(n-1)\]</span> et <span class="math display">\[V = \frac{\sqrt{n}}{\sigma}(\overline{X}-\mu) \sim \mathcal{N}(0,1).\]</span> Elles ne dépendent pas de <span class="math inline">\(\sigma\)</span>. Le ratio <span class="math display">\[T = \frac{V}{\sqrt{U/(n-1)}}\]</span> dont le numérateur suit <span class="math inline">\(\mathcal{N}(0,1)\)</span> et le dénominateur est la racine d’un <span class="math inline">\(\chi^2(n-1)\)</span>, divisé par <span class="math inline">\(n-1\)</span> suit une <strong>loi de Student</strong>, de paramètre <span class="math inline">\(n-1\)</span>, notée <span class="math inline">\(t(n-1)\)</span>.</p></li>
-<li>Soient <span class="math inline">\(U,V\)</span> deux variables aléatoires qui suivent respectivement les lois <span class="math inline">\(\chi^2(r)\)</span> et <span class="math inline">\(\chi^2(s)\)</span>, alors <span class="math display">\[F = \frac{U/r}{V/s}\]</span> suit une <strong>loi de Fisher</strong> de paramètres <span class="math inline">\((r,s)\)</span>, notée <span class="math inline">\(F(r,s)\)</span>. Dans ce cas, <span class="math inline">\(1/F\)</span> suit la loi <span class="math inline">\(F(s,r)\)</span> et si <span class="math inline">\(T \sim t(r)\)</span>, <span class="math inline">\(T^2 \sim F(1,r)\)</span>
-</div>
-</li>
+<li>Soient <span class="math inline">\(U,V\)</span> deux variables aléatoires qui suivent respectivement les lois <span class="math inline">\(\chi^2(r)\)</span> et <span class="math inline">\(\chi^2(s)\)</span>, alors <span class="math display">\[F = \frac{U/r}{V/s}\]</span> suit une <strong>loi de Fisher</strong> de paramètres <span class="math inline">\((r,s)\)</span>, notée <span class="math inline">\(F(r,s)\)</span>. Dans ce cas, <span class="math inline">\(1/F\)</span> suit la loi <span class="math inline">\(F(s,r)\)</span> et si <span class="math inline">\(T \sim t(r)\)</span>, <span class="math inline">\(T^2 \sim F(1,r)\)</span></li>
 </ul>
+</div>
+
 
 </div>
 </div>
