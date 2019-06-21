@@ -23,6 +23,7 @@ Si $X$ admet $f$ comme densité, alors:
 - $X$ et $-X$ ont les mêmes distributions si et seulement si $f_X$ est paire;
 
 - Si $f$ et $g$ sont des densités, il en est de même pour $\lambda f + (1-\lambda)g$ pour $0 \leq \lambda \leq 1$.
+
 ```
 
 ```{example}
@@ -294,6 +295,7 @@ Si $X$ suit une loi $\mathcal{N}(\mu,\Sigma)$, alors
   $$\Sigma_{i,j} = \text{cov} (X_i,X_j)$$
   
 - Si $A$ est une matrice de rang $m \leq n$, alors $XA$ suit la loi $\mathcal{N}(\mu A,A' \Sigma A)$
+
 ```
 
 ## Lois issues de la loi normale
@@ -323,5 +325,6 @@ $$T = \frac{V}{\sqrt{U/(n-1)}}$$
 - Soient $U,V$ deux variables aléatoires qui suivent respectivement les lois $\chi^2(r)$ et $\chi^2(s)$, alors
 $$F = \frac{U/r}{V/s}$$
 suit une **loi de Fisher** de paramètres $(r,s)$, notée $F(r,s)$. Dans ce cas, $1/F$ suit la loi $F(s,r)$ et si $T \sim t(r)$, $T^2 \sim F(1,r)$
+
 ```
 

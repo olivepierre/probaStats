@@ -248,7 +248,7 @@ $$\mathbb{V}(Y | X) = \mathbb{E} \left( [Y- \mathbb{E}(Y | X)]^2  | X\right).$$
 La variance conditionnelle est liée à l'espérance conditionnelle par le théorème :
 
 ```{theorem}
-$$\mathbb{V}(Y)=\mathbb{E}(\mathbb{V}[Y| X])+\mathbb{V}(\mathbb{E}[Y|X])$$\mathbb{V}
+$$\mathbb{V}(Y)=\mathbb{E}(\mathbb{V}[Y| X])+\mathbb{V}(\mathbb{E}[Y|X])$$
 ```
 
 ## Somme de variables aléatoires discrètes
