@@ -135,10 +135,11 @@ $$
 $$
 ```
 
-```{theorem, name="Inégalité de Jensen"} Soit $g$ une fonction convexe, $X$ une variable aléatoire dont l'espérance existe.
+```{theorem, name="Inégalité de Jensen"}
+Soit $g$ une fonction convexe, $X$ une variable aléatoire dont l'espérance existe.
 Alors $g\left(X\right)$ est encore une variable aléatoire, et
 $$
-\mathbb{E} g\left(X \right) \geq g\left( \mathbb{E}X \right)
+\mathbb{E} g\left( X \right) \geq g \left( \mathbb{E} X \right)
 $$
 ```
 
