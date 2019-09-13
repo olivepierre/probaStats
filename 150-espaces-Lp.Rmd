@@ -1,1 +1,5 @@
-#Espaces $L^p$
+# Espaces $L^p$
+
+## Définitions 
+
+<!-- todo : inégalités de Hölder + Minkovski -->

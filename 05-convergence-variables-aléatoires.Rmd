@@ -1,0 +1,161 @@
+# Convergence de variables aléatoires
+
+## Modes de convergence
+
+```{definition}
+Soient $X, X_1, \ldots, X_n$ des variables aléatoires. On dit que :
+  
+  - $X_n \to X$ **presque sûrement** (noté $X_n \xrightarrow{p.s} X$) si 
+$$ \mathbb{P}\left( \left\{ \omega \in \Omega : X_n (\omega) \xrightarrow[n \to +\infty]{} X (\omega) \right\} \right) = 1
+  $$
+  - $X_n \to X$ **dans $L^p$ ($p \geq 1$)** (noté $X_n \xrightarrow{L^p} X$) si $\mathbb{E} |X_n|^p < + \infty$ et 
+$$ \mathbb{E} |X_n - X|^p \xrightarrow[n \to +\infty]{} 0
+  $$
+  - $X_n \to X$ **en probabilité** (noté $X_n \xrightarrow{\mathbb{P}} X$) si 
+$$ \mathbb{P} \left( |X_n-X|> \epsilon \right) \xrightarrow[n \to +\infty]{} 0 \forall \epsilon >0
+  $$
+  - $X_n \to X$ **en loi**, ou **converge faiblement** (noté $X_n \xrightarrow{\mathcal{L}} X$) si 
+$$ \mathbb{P} \left(  X_n  \leq x \right) \xrightarrow[n \to +\infty]{} \mathbb{P} \left(  X \leq x \right) \text{pour tous les $x$ où la fonction $F_X$ est continue.}
+  $$
+  Notons que si $X_n \xrightarrow{\mathcal{L}} X$, $X_n \xrightarrow{\mathcal{L}} Y$ pour tout $Y$ avec la même loi que $X$.
+```
+En particulier, on a les résultats suivants pour la convergence faible.
+
+```{theorem}
+Si $X_n \xrightarrow{\mathcal{L}} X$ et $g$ est une fonction continue, alors $g(X_n) \xrightarrow{\mathcal{L}} g(X)$. Par ailleurs, 
+
+on a les équivalences :
+  
+  - $X_n \xrightarrow{\mathcal{L}} X$
+  - $\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)$ pour toute fonction $g$ continue bornée
+  - $\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)$ pour toute fonction $g$ de la forme $g(x) = f(x) \mathbb{1}_{[a,b]}(x)$ où $f$ est continue sur $[a,b]$ et $a,b$ sont des points de continuité de la fonction de répartition de $X$.
+```
+
+```{theorem}
+Si $X_n \xrightarrow{\mathbb{P}} X$ et $g$ est une fonction continue, alors $g(X_n) \xrightarrow{\mathbb{P}} g(X)$
+```
+
+```{theorem}
+Ces modes de convergence ne sont pas équivalents:
+  
+  - $\left( X_n \xrightarrow{p.s} X \right) \Rightarrow \left( X_n \xrightarrow{\mathbb{P}} X \right)$
+  - $\left( X_n \xrightarrow{L^p} X \right) \Rightarrow \left( X_n \xrightarrow{\mathbb{P}} X \right)$
+  - $\left( X_n \xrightarrow{\mathbb{P}} X \right) \Rightarrow \left( X_n \xrightarrow{\mathcal{L}} X \right)$
+
+Les implications inverses sont fausses en général.
+
+De plus, si $q > p \geq 1$, alors
+$$
+  \left( X_n \xrightarrow{L^q} X \right) \Rightarrow \left( X_n \xrightarrow{L^p} X \right)
+  $$
+```
+
+```{theorem}
+On a :
+  
+- Si $X_n \xrightarrow{p.s} X$ et $Y_n \xrightarrow{p.s} Y$, alors $X_n + Y_n \xrightarrow{p.s} X + Y$
+- Si $X_n \xrightarrow{L^p} X$ et $Y_n \xrightarrow{L^p} Y$, alors $X_n + Y_n \xrightarrow{L^p} X + Y$
+- Si $X_n \xrightarrow{\mathbb{P}} X$ et $Y_n \xrightarrow{\mathbb{P}} Y$, alors $X_n + Y_n \xrightarrow{\mathbb{P}} X + Y$ : Ce résultat est faux en général pour la convergence faible (prendre $X$ telle que $X$ et $-X$ ont la même loi, $X_n = Y_n$ et $Y = -X$).
+- Si $X_n \xrightarrow{\mathbb{P}} X$ et $Y_n \xrightarrow{\mathbb{P}} Y$, alors $X_n  Y_n \xrightarrow{\mathbb{P}} X  Y$  
+
+```
+
+## Inégalités en probabilités
+
+```{theorem}
+Soit $X$ une variable aléatoire, $h$ une fonction positive telle que $h(X)$ admette une espérance.
+Alors
+$$
+  \mathbb{P} \left( h(X) \geq a \right) \leq \frac{\mathbb{E} h(X)}{a} , \forall a > 0
+$$  
+```
+
+```{proof}
+Soit $A = \lbrace h(X) \geq a \rbrace. Alors $X \geq a \mathbb{1}_A$ et le résultat suit en passant à l'espérance.
+```
+
+En particulier, on a:
+
+``` {theorem,name="Inégalité de Markov"}
+Soit $X$ une variable aléatoire qui admet une moyenne. Alors 
+$$
+  \mathbb{P} \left( |X| \geq a \right) \leq \frac{\mathbb{E} |X|}{a} , \forall a > 0
+$$  
+```
+
+``` {theorem,name="Inégalité de Bienaymé-Tchébychev"}
+Soit $X$ une variable aléatoire qui admet une moyenne. Alors 
+$$
+  \mathbb{P} \left( |X|^2 \geq a \right) \leq \frac{\mathbb{E} |X|^2}{a} , \forall a > 0
+$$  
+```
+
+```{theorem}
+Soit $X$ une variable aléatoire qui admet un moment d'ordre 2. Alors
+$$
+  \mathbb{P} \left( |X - \mathbb{E} X| \geq a \right) \leq \frac{\mathbb{V} X}{a^2} , \forall a > 0
+$$  
+```
+
+Le théorème suivant permet de proposer une borne supérieure à $\mathbb{P} \left( |X| \geq a \right)$ : 
+```{theorem}
+Si $g$ est une fonction positive strictement croissante, alors
+$$
+  \mathbb{P} \left( |X| \geq a \right) \leq \frac{\mathbb{E} g(X)}{g(a)} , \forall a > 0
+  $$
+```
+
+Les bornes inférieures sont plus difficiles à trouver en général, mais on a le
+
+```{theorem}
+Soit $h : \mathbb{R} \to [0,M]$ une fonction positive à valeurs bornées.
+Alors
+$$
+  \mathbb{P} \left( h(X) \geq a \right) \leq \frac{\mathbb{E} h(X) - a}{M-a} , \forall  M > a \geq 0
+  $$
+```
+```{proof}
+Soit $A = \lbrace h(X) \geq a \rbrace$. Alors $h(X) \leq M \mathbb{1}_A + a \mathbb{1}_{A^c}$ et le résultat suit en passant à l'espérance.
+```
+
+Une inégalité comparable à l'inégalité de Markov, mais plus précise, est l'inégalité de Hoeffding :
+
+```{theorem, name = "Inégalité de Hoeffding"}
+Soient $Y_1, Y_2, \ldots$ des variables aléatoires indépendantes, d'espérance nulle et bornée (pour tout entier positif $i$, il existe des réels $a_i, b_i$ tels que $a_i \leq Y_i \leq b_i$). Soit $\epsilon > 0$. Alors pour tout $t>0$,
+
+$$
+\mathbb{P} \left(\sum_{i=1}^n Y_i \geq \epsilon \right) \leq e^{-t \epsilon} \prod_{i=1}^n exp \left(\frac{t^2 \left(b_i^2 - a_i^2 \right)}{8}\right)
+$$
+```
+
+```{theorem, name="Inégalité de Cauchy-Schwarz"}
+Soient $X,Y$ deux variables aléatoires admettant des moments d'ordre 2, alors
+$$
+\mathbb{E} XY \leq \sqrt{\mathbb{E} \left( X^2 \right) \mathbb{E} \left( Y^2 \right)}
+$$
+```
+
+```{theorem, name="Inégalité de Jensen"} Soit $g$ une fonction convexe, $X$ une variable aléatoire dont l'espérance existe.
+Alors $g\left(X\right)$ est encore une variable aléatoire, et
+$$
+\mathbb{E} g\left(X \right) \geq g\left( \mathbb{E}X \right)
+$$
+```
+
+## Applications
+
+Soient $X_1,X_2,\ldots$ des variables aléatoires indépendantes identiquement distribuées, d'éspérance égale à $\mu$.
+Soit $ \overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i$ la *moyenne empirique* des $X_i$.
+
+```{theorem,name="Loi faible des grands nombres"}
+Supposons que $X_1$ admette un moment d'ordre 2, alors la moyenne empirique converge *en probabilité* vers $\mu$.
+```
+
+```{theorem,name="Loi forte des grands nombres"}
+Supposons que $X_1$ admette un moment d'ordre 1, alors la moyenne empirique converge *presque sûrement* vers $\mu$.
+```
+
+```{theorem,name="Théorème central limite"}
+Supposont que $X_1$ admette une variance, notée $\sigma^2$.
+Alors la variable aléatoire $\sqrt{n} \frac{\overline{X}_n - \mu}{\sigma}$ converge *en loi* vers une variable aléatoire de loi normale centrée réduite $\mathcal{N}(0,1)$.
+```
