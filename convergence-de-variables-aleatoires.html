@@ -261,24 +261,30 @@ Le théorème suivant permet de proposer une borne supérieure à <span class="m
 \]</span>
 </div>
 
-<p><code>{theorem, name=&quot;Inégalité de Jensen&quot;} Soit $g$ une fonction convexe, $X$ une variable aléatoire dont l'espérance existe. Alors $g\left(X\right)$ est encore une variable aléatoire, et $$ \mathbb{E} g\left(X \right) \geq g\left( \mathbb{E}X \right) $$</code></p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-85" class="theorem"><strong>Théorème 5.13  (Inégalité de Jensen)  </strong></span>Soit <span class="math inline">\(g\)</span> une fonction convexe, <span class="math inline">\(X\)</span> une variable aléatoire dont l’espérance existe. Alors <span class="math inline">\(g\left(X\right)\)</span> est encore une variable aléatoire, et <span class="math display">\[
+\mathbb{E} g\left( X \right) \geq g \left( \mathbb{E} X \right)
+\]</span>
+</div>
+
 </div>
 <div id="applications" class="section level2">
 <h2><span class="header-section-number">5.3</span> Applications</h2>
 <p>Soient <span class="math inline">\(X_1,X_2,\ldots\)</span> des variables aléatoires indépendantes identiquement distribuées, d’éspérance égale à <span class="math inline">\(\mu\)</span>. Soit $ <em>n =  </em>{i=1}^n X_i$ la <em>moyenne empirique</em> des <span class="math inline">\(X_i\)</span>.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-85" class="theorem"><strong>Théorème 5.13  (Loi faible des grands nombres)  </strong></span>Supposons que <span class="math inline">\(X_1\)</span> admette un moment d’ordre 2, alors la moyenne empirique converge <em>en probabilité</em> vers <span class="math inline">\(\mu\)</span>.
+<span id="thm:unnamed-chunk-86" class="theorem"><strong>Théorème 5.14  (Loi faible des grands nombres)  </strong></span>Supposons que <span class="math inline">\(X_1\)</span> admette un moment d’ordre 2, alors la moyenne empirique converge <em>en probabilité</em> vers <span class="math inline">\(\mu\)</span>.
 </div>
 
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-86" class="theorem"><strong>Théorème 5.14  (Loi forte des grands nombres)  </strong></span>Supposons que <span class="math inline">\(X_1\)</span> admette un moment d’ordre 1, alors la moyenne empirique converge <em>presque sûrement</em> vers <span class="math inline">\(\mu\)</span>.
+<span id="thm:unnamed-chunk-87" class="theorem"><strong>Théorème 5.15  (Loi forte des grands nombres)  </strong></span>Supposons que <span class="math inline">\(X_1\)</span> admette un moment d’ordre 1, alors la moyenne empirique converge <em>presque sûrement</em> vers <span class="math inline">\(\mu\)</span>.
 </div>
 
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-87" class="theorem"><strong>Théorème 5.15  (Théorème central limite)  </strong></span>Supposont que <span class="math inline">\(X_1\)</span> admette une variance, notée <span class="math inline">\(\sigma^2\)</span>. Alors la variable aléatoire <span class="math inline">\(\sqrt{n} \frac{\overline{X}_n - \mu}{\sigma}\)</span> converge <em>en loi</em> vers une variable aléatoire de loi normale centrée réduite <span class="math inline">\(\mathcal{N}(0,1)\)</span>.
+<span id="thm:unnamed-chunk-88" class="theorem"><strong>Théorème 5.16  (Théorème central limite)  </strong></span>Supposont que <span class="math inline">\(X_1\)</span> admette une variance, notée <span class="math inline">\(\sigma^2\)</span>. Alors la variable aléatoire <span class="math inline">\(\sqrt{n} \frac{\overline{X}_n - \mu}{\sigma}\)</span> converge <em>en loi</em> vers une variable aléatoire de loi normale centrée réduite <span class="math inline">\(\mathcal{N}(0,1)\)</span>.
 </div>
 
 
