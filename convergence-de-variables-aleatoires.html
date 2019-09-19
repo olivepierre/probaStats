@@ -143,10 +143,11 @@
 <li><span class="math inline">\(X_n \to X\)</span> <strong>en probabilité</strong> (noté <span class="math inline">\(X_n \xrightarrow{\mathbb{P}} X\)</span>) si <span class="math display">\[ \mathbb{P} \left( |X_n-X|&gt; \epsilon \right) \xrightarrow[n \to +\infty]{} 0 \forall \epsilon &gt;0
   \]</span></li>
 <li><span class="math inline">\(X_n \to X\)</span> <strong>en loi</strong>, ou <strong>converge faiblement</strong> (noté <span class="math inline">\(X_n \xrightarrow{\mathcal{L}} X\)</span>) si <span class="math display">\[ \mathbb{P} \left(  X_n  \leq x \right) \xrightarrow[n \to +\infty]{} \mathbb{P} \left(  X \leq x \right) \text{pour tous les $x$ où la fonction $F_X$ est continue.}
-  \]</span> Notons que si <span class="math inline">\(X_n \xrightarrow{\mathcal{L}} X\)</span>, <span class="math inline">\(X_n \xrightarrow{\mathcal{L}} Y\)</span> pour tout <span class="math inline">\(Y\)</span> avec la même loi que <span class="math inline">\(X\)</span>.
-</div>
- En particulier, on a les résultats suivants pour la convergence faible.</li>
+  \]</span> Notons que si <span class="math inline">\(X_n \xrightarrow{\mathcal{L}} X\)</span>, <span class="math inline">\(X_n \xrightarrow{\mathcal{L}} Y\)</span> pour tout <span class="math inline">\(Y\)</span> avec la même loi que <span class="math inline">\(X\)</span>.</li>
 </ul>
+</div>
+
+<p>En particulier, on a les résultats suivants pour la convergence faible.</p>
 
 <div class="theorem">
 <p><span id="thm:unnamed-chunk-71" class="theorem"><strong>Théorème 5.1  </strong></span>Si <span class="math inline">\(X_n \xrightarrow{\mathcal{L}} X\)</span> et <span class="math inline">\(g\)</span> est une fonction continue, alors <span class="math inline">\(g(X_n) \xrightarrow{\mathcal{L}} g(X)\)</span>. Par ailleurs,</p>
@@ -154,10 +155,10 @@
 <ul>
 <li><span class="math inline">\(X_n \xrightarrow{\mathcal{L}} X\)</span></li>
 <li><span class="math inline">\(\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)\)</span> pour toute fonction <span class="math inline">\(g\)</span> continue bornée</li>
-<li><span class="math inline">\(\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)\)</span> pour toute fonction <span class="math inline">\(g\)</span> de la forme <span class="math inline">\(g(x) = f(x) \mathbb{1}_{[a,b]}(x)\)</span> où <span class="math inline">\(f\)</span> est continue sur <span class="math inline">\([a,b]\)</span> et <span class="math inline">\(a,b\)</span> sont des points de continuité de la fonction de répartition de <span class="math inline">\(X\)</span>.
-</div>
-</li>
+<li><span class="math inline">\(\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)\)</span> pour toute fonction <span class="math inline">\(g\)</span> de la forme <span class="math inline">\(g(x) = f(x) \mathbb{1}_{[a,b]}(x)\)</span> où <span class="math inline">\(f\)</span> est continue sur <span class="math inline">\([a,b]\)</span> et <span class="math inline">\(a,b\)</span> sont des points de continuité de la fonction de répartition de <span class="math inline">\(X\)</span>.</li>
 </ul>
+</div>
+
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-72" class="theorem"><strong>Théorème 5.2  </strong></span>Si <span class="math inline">\(X_n \xrightarrow{\mathbb{P}} X\)</span> et <span class="math inline">\(g\)</span> est une fonction continue, alors <span class="math inline">\(g(X_n) \xrightarrow{\mathbb{P}} g(X)\)</span>
@@ -201,7 +202,8 @@ De plus, si <span class="math inline">\(q &gt; p \geq 1\)</span>, alors <span cl
 
 
 <div class="proof">
- <span class="proof"><em>Preuve </em></span> Soit $A = h(X) a . Alors <span class="math inline">\(X \geq a \mathbb{1}_A\)</span> et le résultat suit en passant à l’espérance.
+<p> <span class="proof"><em>Preuve </em></span>  Soit <span class="math inline">\(A = \lbrace h(X) \geq a \rbrace\)</span> .</p>
+Alors <span class="math inline">\(X \geq a \mathbf{1}_A\)</span> et le résultat suit en passant à l’espérance.
 </div>
 
 <p>En particulier, on a:</p>
@@ -242,7 +244,8 @@ Le théorème suivant permet de proposer une borne supérieure à <span class="m
 </div>
  
 <div class="proof">
- <span class="proof"><em>Preuve </em></span> Soit <span class="math inline">\(A = \lbrace h(X) \geq a \rbrace\)</span>. Alors <span class="math inline">\(h(X) \leq M \mathbb{1}_A + a \mathbb{1}_{A^c}\)</span> et le résultat suit en passant à l’espérance.
+<p> <span class="proof"><em>Preuve </em></span>  Soit <span class="math display">\[ A = \lbrace h(X) \geq a \rbrace \]</span> .</p>
+<p>Alors <span class="math display">\[ h(X) \leq M \mathbf{1}_A + a \mathbf{1}_{A^c} \]</span> et le résultat suit en passant à l’ espérance.</p>
 </div>
 
 <p>Une inégalité comparable à l’inégalité de Markov, mais plus précise, est l’inégalité de Hoeffding :</p>
@@ -271,15 +274,15 @@ Le théorème suivant permet de proposer une borne supérieure à <span class="m
 </div>
 <div id="applications" class="section level2">
 <h2><span class="header-section-number">5.3</span> Applications</h2>
-<p>Soient <span class="math inline">\(X_1,X_2,\ldots\)</span> des variables aléatoires indépendantes identiquement distribuées, d’éspérance égale à <span class="math inline">\(\mu\)</span>. Soit $ <em>n =  </em>{i=1}^n X_i$ la <em>moyenne empirique</em> des <span class="math inline">\(X_i\)</span>.</p>
+<p>Soient <span class="math inline">\(X_1,X_2,\ldots\)</span> des variables aléatoires indépendantes identiquement distribuées. Soit <span class="math inline">\(\overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i\)</span> la <em>moyenne empirique</em> des <span class="math inline">\(X_i\)</span>.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-86" class="theorem"><strong>Théorème 5.14  (Loi faible des grands nombres)  </strong></span>Supposons que <span class="math inline">\(X_1\)</span> admette un moment d’ordre 2, alors la moyenne empirique converge <em>en probabilité</em> vers <span class="math inline">\(\mu\)</span>.
+<span id="thm:unnamed-chunk-86" class="theorem"><strong>Théorème 5.14  (Loi faible des grands nombres)  </strong></span>La moyenne empirique converge <em>en probabilité</em> vers <span class="math inline">\(\mu\)</span>, l’espérance de <span class="math inline">\(X_1\)</span>.
 </div>
 
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-87" class="theorem"><strong>Théorème 5.15  (Loi forte des grands nombres)  </strong></span>Supposons que <span class="math inline">\(X_1\)</span> admette un moment d’ordre 1, alors la moyenne empirique converge <em>presque sûrement</em> vers <span class="math inline">\(\mu\)</span>.
+<span id="thm:unnamed-chunk-87" class="theorem"><strong>Théorème 5.15  (Loi forte des grands nombres)  </strong></span>La moyenne empirique converge <em>presque sûrement</em> vers <span class="math inline">\(\mu\)</span>, l’espérance de <span class="math inline">\(X_1\)</span>.
 </div>
 
 
