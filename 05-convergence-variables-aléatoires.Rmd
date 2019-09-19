@@ -16,9 +16,10 @@ $$ \mathbb{P} \left( |X_n-X|> \epsilon \right) \xrightarrow[n \to +\infty]{} 0 \
   $$
   - $X_n \to X$ **en loi**, ou **converge faiblement** (noté $X_n \xrightarrow{\mathcal{L}} X$) si 
 $$ \mathbb{P} \left(  X_n  \leq x \right) \xrightarrow[n \to +\infty]{} \mathbb{P} \left(  X \leq x \right) \text{pour tous les $x$ où la fonction $F_X$ est continue.}
-  $$
-  Notons que si $X_n \xrightarrow{\mathcal{L}} X$, $X_n \xrightarrow{\mathcal{L}} Y$ pour tout $Y$ avec la même loi que $X$.
+  $$ Notons que si $X_n \xrightarrow{\mathcal{L}} X$, $X_n \xrightarrow{\mathcal{L}} Y$ pour tout $Y$ avec la même loi que $X$.
+
 ```
+
 En particulier, on a les résultats suivants pour la convergence faible.
 
 ```{theorem}
@@ -29,6 +30,7 @@ on a les équivalences :
   - $X_n \xrightarrow{\mathcal{L}} X$
   - $\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)$ pour toute fonction $g$ continue bornée
   - $\mathbb{E} g\left(X_n\right) \to \mathbb{E} g\left(X\right)$ pour toute fonction $g$ de la forme $g(x) = f(x) \mathbb{1}_{[a,b]}(x)$ où $f$ est continue sur $[a,b]$ et $a,b$ sont des points de continuité de la fonction de répartition de $X$.
+
 ```
 
 ```{theorem}
@@ -71,7 +73,10 @@ $$
 ```
 
 ```{proof}
-Soit $A = \lbrace h(X) \geq a \rbrace. Alors $X \geq a \mathbb{1}_A$ et le résultat suit en passant à l'espérance.
+
+Soit $A = \lbrace h(X) \geq a \rbrace$ .
+
+Alors $X \geq a \mathbf{1}_A$ et le résultat suit en passant à l'espérance.
 ```
 
 En particulier, on a:
@@ -115,7 +120,11 @@ $$
   $$
 ```
 ```{proof}
-Soit $A = \lbrace h(X) \geq a \rbrace$. Alors $h(X) \leq M \mathbb{1}_A + a \mathbb{1}_{A^c}$ et le résultat suit en passant à l'espérance.
+
+  Soit $$ A = \lbrace h(X) \geq a \rbrace $$ . 
+ 
+ Alors $$ h(X) \leq M \mathbf{1}_A + a \mathbf{1}_{A^c} $$ et le résultat suit en passant à l' espérance.
+
 ```
 
 Une inégalité comparable à l'inégalité de Markov, mais plus précise, est l'inégalité de Hoeffding :
@@ -145,15 +154,15 @@ $$
 
 ## Applications
 
-Soient $X_1,X_2,\ldots$ des variables aléatoires indépendantes identiquement distribuées, d'éspérance égale à $\mu$.
-Soit $ \overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i$ la *moyenne empirique* des $X_i$.
+Soient $X_1,X_2,\ldots$ des variables aléatoires indépendantes identiquement distribuées.
+Soit $\overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i$ la *moyenne empirique* des $X_i$.
 
 ```{theorem,name="Loi faible des grands nombres"}
-Supposons que $X_1$ admette un moment d'ordre 2, alors la moyenne empirique converge *en probabilité* vers $\mu$.
+La moyenne empirique converge *en probabilité* vers $\mu$, l'espérance de $X_1$.
 ```
 
 ```{theorem,name="Loi forte des grands nombres"}
-Supposons que $X_1$ admette un moment d'ordre 1, alors la moyenne empirique converge *presque sûrement* vers $\mu$.
+La moyenne empirique converge *presque sûrement* vers $\mu$, l'espérance de $X_1$.
 ```
 
 ```{theorem,name="Théorème central limite"}
