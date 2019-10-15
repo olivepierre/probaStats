@@ -1,8 +1,114 @@
 # Statistique inférentielle
 
-## Modélisation en statistique
+## Introduction
 
-## Inférence des paramètres
+En statistiques, on est confronté au problème suivant : observant les résultats d'une expérience aléatoire $X_1, \ldots,X_n$ que peut-on dire de la loi du processus associé ?
 
-## Tests d'hypothèses
+Une approche courante consiste à proposer un modèle décrivant le processus observé, et à inférer les caractéristiques de ce modèle à partir des données observées. Quand ces caractéristiques sont paramétrées par un nombre fini de paramètres, on dit qu'il s'agit d'un *modèle paramétrique*, sinon il s'agit d'un *modèle non-paramétrique*.
+
+
+### Estimation ponctuelle
+
+```{definition}
+Soit $\theta$ une quantité à estimer. Un estimateur de $\theta$, noté $\hat{\theta}_n$ est une variable aléatoire
+$$
+  \hat{\theta}_n = g(X_1, \ldots , X_n)
+  $$
+```
+Ce paramètre n'est pas nécessairement un des paramètres qui définit la loi, mais peut en être la somme, le produit...
+
+L'idée est de construire $\hat{\theta}_n \simeq \theta$ ($\theta$ étant une quantité non observable, mais fixée).
+
+```{definition}
+Le biais de l'estimateur $\hat{\theta}_n$ est défini par
+$$\mathbb{E} \hat{\theta}_n - \theta$$.
+L'espérance étant prise suivant la distribution qui a généré les données (donc avec $\theta$ observé).
+Lorsqu'il est nul, on dit que l'estimateur est *sans biais*. Lorsqu'il tend vers 0 lorsque $n$ tend vers $+\infty$, on dit que l'estimateur est *asymptotiquement sans biais*. 
+```
+
+Il est souhaitable que l'estimateur s'approche de la valeur à estimer lorsq'il y a de plus en plus de données disponibles.
+
+```{definition}
+On dit que l'estimateur $\hat{\theta}_n$ est *consistant* s'il converge en probabilité vers $\theta$.
+```
+
+```{theorem}
+La qualité de la précision d'un estimateur est mesurée par son *erreur quadratique moyenne*
+$$
+\mathbb{E} \left[ \hat{\theta}_n - \theta\right]^2
+$$
+Cette quantité se décompose en
+$$
+\mathbb{E} \left[ \hat{\theta}_n - \theta\right]^2 = \text{biais}^2(\hat{\theta}) + \mathbb{V} \hat{\theta}
+$$
+
+```{theorem}
+Si le biais et la variance d'un estimateur converge vers 0 lorsque $n$ tend vers $+\infty$, alors cet estimateur est consistent.
+```
+
+```{definition}
+On dit que l'estimateur $\hat{\theta}_n$ est *asymptotiquement normal* si
+$$
+\frac{\hat{\theta}_n - \theta}{\sqrt{\mathbb{V} \hat{\theta}_n}} \xrightarrow{\mathcal{L}} \mathcal{N}(0,1)
+$$
+```
+
+Il est facile de construire des estimateurs avec la méthode des moments:
+```{definition}
+Soit $\alpha_k(\theta) = \mathbb{E} X^k$ et $\hat{\alpha}_k = \frac{1}{n} \sum_{i=1}^n X_i^k$.
+
+On définit $\hat{\theta}_n$ comme la valeur de $\theta$ qui vérifie:
+  $$
+  \alpha_1(\hat{\theta}_n) = \hat{\alpha}_1, \ldots , \alpha_k(\hat{\theta}_n) = \hat{\alpha}_k
+  $$.
+Cette formule définit un système de $k$ équations à $k$ inconnues. Il suffit donc de choisir un $k$ adapté.
+Cette estimateur s'appelle l'estimateur de $\theta$ selon *la méthode des moments*.
+```
+
+```{theorem}
+Soit $\hat{\theta}_n$ l'estimateur de $\theta$ selon la méthode des moments.
+Alors
+
+- L'estimateur existe avec une probabilité qui tend vers 1.
+- L'estimateur est consistent.
+- L'estimateur est asymptotiquement normal:
+  $$
+  \sqrt{n}(\hat{\theta}_n - \theta) \xrightarrow{\mathcal{L}} \mathcal{N}(0,\Sigma)
+  $$
+  où $\Sigma = g \mathbb{E} YY' g'$, avec $Y = (X, X^2,\ldots,X^k)', g = (\partial \alpha^{-1}_1(\theta) / \partial \theta , \ldots , \partial \alpha^{-1}_k(\theta) / \partial \theta)$.
+```
+
+
+
+### Intervalles de confiance
+
+```{definition}
+Soit $\alpha \in ] 0 , 1 [$. Un *intervalle de confiance au niveau de confiance $1- \alpha$* pour un paramètre réel $\theta$ est un intervalle $\mathcal{I}_n = \left] a_n(X_1, \ldots, X_n) , b_n(X_1, \ldots, X_n) \right[$ tel que 
+$$
+\mathbb{P} \left( \theta \in \mathcal{I}_n \right) \geq 1-\alpha 
+$$
+A noter : $\theta$ est fixé et $\mathcal{I}_n$ a des bornes aléatoires.  
+```
+
+```{theorem}
+Supposons que  l'estimateur $\hat{\theta}_n$ soit asymptotiquement normal. Soit $\Phi$ la fonction de répartition de la loi normale (centrée, réduite), $\alpha \in ] 0 , 1 [$ et $z_{\alpha /2} = \Phi^{-1}(1-\frac12 \alpha)$ (ce qui est équivalent à $\mathbb{P}(-z_{\alpha /2} < Z < z_{\alpha /2}) = 1- \alpha$ lorsque $Z \sim \mathcal{N}(0,1)$).
+Alors l'intervalle
+$$\mathcal{I}_n = \left]
+\hat{\theta}_n - z_{\alpha /2} \sqrt{\mathbb{V}\hat{\theta}_n }
+,
+\hat{\theta}_n + z_{\alpha /2} \sqrt{\mathbb{V}\hat{\theta}_n }
+\right[
+  $$
+vérifie
+$$
+  \mathcal{P}(\theta \in \mathcal{I}_n) \to 1-\alpha
+  $$
+```
+
+### Tests d'hypothèses
+
+Lorsque l'on teste une hypothèse, on part d'une théorie par défaut, appelée *hypothèse nulle* $H_0$ qui est comparée à une *hypothèse alternative* $H_a$. On regarde si les données fournissent des éléments suffisamment convaincants pour *rejeter l'hypothèse nulle*. Sinon, *on ne rejette pas* l'hypothèse nulle.
+
++ ch 10 + tests de Wald et exemple (compare moyenne) = illustration de stratégies de tests
+
 
