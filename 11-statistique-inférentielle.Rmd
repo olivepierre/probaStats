@@ -1,0 +1,8 @@
+# Statistique inférentielle
+
+## Modélisation en statistique
+
+## Inférence des paramètres
+
+## Tests d'hypothèses
+
