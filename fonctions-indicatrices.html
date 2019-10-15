@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>C Fonctions indicatrices | Probabilités et statistiques</title>
+  <title>E Fonctions indicatrices | Probabilités et statistiques</title>
   <meta name="description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
-  <meta name="generator" content="bookdown 0.13.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.14.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="C Fonctions indicatrices | Probabilités et statistiques" />
+  <meta property="og:title" content="E Fonctions indicatrices | Probabilités et statistiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="C Fonctions indicatrices | Probabilités et statistiques" />
+  <meta name="twitter:title" content="E Fonctions indicatrices | Probabilités et statistiques" />
   
   <meta name="twitter:description" content="Ce document fournit des éléments en probabilités et statistiques, illustrés en R." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="techniques-de-denombrement-en-probabilite.html"/>
-<link rel="next" href="espaces-lp.html"/>
+<link rel="prev" href="échantillonage.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -64,53 +67,58 @@
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="part"><span><b>I Probabilités</b></span></li>
-<li class="chapter" data-level="1" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html"><i class="fa fa-check"></i><b>1</b> Évènements et probabilités</a><ul>
-<li class="chapter" data-level="1.1" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#evenements"><i class="fa fa-check"></i><b>1.1</b> Évènements</a></li>
-<li class="chapter" data-level="1.2" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#probabilites"><i class="fa fa-check"></i><b>1.2</b> Probabilités</a></li>
-<li class="chapter" data-level="1.3" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#probabilites-conditionnelles"><i class="fa fa-check"></i><b>1.3</b> Probabilités conditionnelles</a></li>
-<li class="chapter" data-level="1.4" data-path="evenements-et-probabilites.html"><a href="evenements-et-probabilites.html#independance"><i class="fa fa-check"></i><b>1.4</b> Indépendance</a></li>
+<li class="chapter" data-level="1" data-path="évènements-et-probabilités.html"><a href="évènements-et-probabilités.html"><i class="fa fa-check"></i><b>1</b> Évènements et probabilités</a><ul>
+<li class="chapter" data-level="1.1" data-path="évènements-et-probabilités.html"><a href="évènements-et-probabilités.html#évènements"><i class="fa fa-check"></i><b>1.1</b> Évènements</a></li>
+<li class="chapter" data-level="1.2" data-path="évènements-et-probabilités.html"><a href="évènements-et-probabilités.html#probabilités"><i class="fa fa-check"></i><b>1.2</b> Probabilités</a></li>
+<li class="chapter" data-level="1.3" data-path="évènements-et-probabilités.html"><a href="évènements-et-probabilités.html#probabilités-conditionnelles"><i class="fa fa-check"></i><b>1.3</b> Probabilités conditionnelles</a></li>
+<li class="chapter" data-level="1.4" data-path="évènements-et-probabilités.html"><a href="évènements-et-probabilités.html#indépendance"><i class="fa fa-check"></i><b>1.4</b> Indépendance</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html"><i class="fa fa-check"></i><b>2</b> Variables aléatoires</a><ul>
-<li class="chapter" data-level="2.1" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html#variables-aleatoires-1"><i class="fa fa-check"></i><b>2.1</b> Variables aléatoires</a></li>
-<li class="chapter" data-level="2.2" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html#variables-discretes-et-continues"><i class="fa fa-check"></i><b>2.2</b> Variables discrètes et continues</a></li>
-<li class="chapter" data-level="2.3" data-path="variables-aleatoires.html"><a href="variables-aleatoires.html#vecteurs-aleatoires"><i class="fa fa-check"></i><b>2.3</b> Vecteurs aléatoires</a></li>
+<li class="chapter" data-level="2" data-path="variables-aléatoires.html"><a href="variables-aléatoires.html"><i class="fa fa-check"></i><b>2</b> Variables aléatoires</a><ul>
+<li class="chapter" data-level="2.1" data-path="variables-aléatoires.html"><a href="variables-aléatoires.html#variables-aléatoires-1"><i class="fa fa-check"></i><b>2.1</b> Variables aléatoires</a></li>
+<li class="chapter" data-level="2.2" data-path="variables-aléatoires.html"><a href="variables-aléatoires.html#variables-discrètes-et-continues"><i class="fa fa-check"></i><b>2.2</b> Variables discrètes et continues</a></li>
+<li class="chapter" data-level="2.3" data-path="variables-aléatoires.html"><a href="variables-aléatoires.html#vecteurs-aléatoires"><i class="fa fa-check"></i><b>2.3</b> Vecteurs aléatoires</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html"><i class="fa fa-check"></i><b>3</b> Variables aléatoires discrètes</a><ul>
-<li class="chapter" data-level="3.1" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#fonctions-de-masse"><i class="fa fa-check"></i><b>3.1</b> Fonctions de masse</a></li>
-<li class="chapter" data-level="3.2" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#independance-1"><i class="fa fa-check"></i><b>3.2</b> Indépendance</a></li>
-<li class="chapter" data-level="3.3" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#esperance"><i class="fa fa-check"></i><b>3.3</b> Espérance</a></li>
-<li class="chapter" data-level="3.4" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#cas-particuliers-de-variables-discretes-aleatoires"><i class="fa fa-check"></i><b>3.4</b> Cas particuliers de variables discrètes aléatoires</a></li>
-<li class="chapter" data-level="3.5" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#dependance"><i class="fa fa-check"></i><b>3.5</b> Dépendance</a></li>
-<li class="chapter" data-level="3.6" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#loi-conditionnelle-et-esperance-conditionnelle"><i class="fa fa-check"></i><b>3.6</b> Loi conditionnelle et espérance conditionnelle</a></li>
-<li class="chapter" data-level="3.7" data-path="variables-aleatoires-discretes.html"><a href="variables-aleatoires-discretes.html#somme-de-variables-aleatoires-discretes"><i class="fa fa-check"></i><b>3.7</b> Somme de variables aléatoires discrètes</a></li>
+<li class="chapter" data-level="3" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html"><i class="fa fa-check"></i><b>3</b> Variables aléatoires discrètes</a><ul>
+<li class="chapter" data-level="3.1" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#fonctions-de-masse"><i class="fa fa-check"></i><b>3.1</b> Fonctions de masse</a></li>
+<li class="chapter" data-level="3.2" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#indépendance-1"><i class="fa fa-check"></i><b>3.2</b> Indépendance</a></li>
+<li class="chapter" data-level="3.3" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#espérance"><i class="fa fa-check"></i><b>3.3</b> Espérance</a></li>
+<li class="chapter" data-level="3.4" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#cas-particuliers-de-variables-discrètes-aléatoires"><i class="fa fa-check"></i><b>3.4</b> Cas particuliers de variables discrètes aléatoires</a></li>
+<li class="chapter" data-level="3.5" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#dépendance"><i class="fa fa-check"></i><b>3.5</b> Dépendance</a></li>
+<li class="chapter" data-level="3.6" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#loi-conditionnelle-et-espérance-conditionnelle"><i class="fa fa-check"></i><b>3.6</b> Loi conditionnelle et espérance conditionnelle</a></li>
+<li class="chapter" data-level="3.7" data-path="variables-aléatoires-discrètes.html"><a href="variables-aléatoires-discrètes.html#somme-de-variables-aléatoires-discrètes"><i class="fa fa-check"></i><b>3.7</b> Somme de variables aléatoires discrètes</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html"><i class="fa fa-check"></i><b>4</b> Variables aléatoires continues</a><ul>
-<li class="chapter" data-level="4.1" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#densites-de-probabilites"><i class="fa fa-check"></i><b>4.1</b> densités de probabilités</a></li>
-<li class="chapter" data-level="4.2" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#independance-2"><i class="fa fa-check"></i><b>4.2</b> Indépendance</a></li>
-<li class="chapter" data-level="4.3" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#exemples-de-variables-aleatoires-continues"><i class="fa fa-check"></i><b>4.3</b> Exemples de variables aléatoires continues</a></li>
-<li class="chapter" data-level="4.4" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#dependance-1"><i class="fa fa-check"></i><b>4.4</b> Dépendance</a></li>
-<li class="chapter" data-level="4.5" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#somme-de-variables-aleatoires"><i class="fa fa-check"></i><b>4.5</b> Somme de variables aléatoires</a></li>
-<li class="chapter" data-level="4.6" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#la-loi-normale-multivariee"><i class="fa fa-check"></i><b>4.6</b> La loi normale multivariée</a></li>
-<li class="chapter" data-level="4.7" data-path="variables-aleatoires-continues.html"><a href="variables-aleatoires-continues.html#lois-issues-de-la-loi-normale"><i class="fa fa-check"></i><b>4.7</b> Lois issues de la loi normale</a></li>
+<li class="chapter" data-level="4" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html"><i class="fa fa-check"></i><b>4</b> Variables aléatoires continues</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#densités-de-probabilités"><i class="fa fa-check"></i><b>4.1</b> densités de probabilités</a></li>
+<li class="chapter" data-level="4.2" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#indépendance-2"><i class="fa fa-check"></i><b>4.2</b> Indépendance</a></li>
+<li class="chapter" data-level="4.3" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#exemples-de-variables-aléatoires-continues"><i class="fa fa-check"></i><b>4.3</b> Exemples de variables aléatoires continues</a></li>
+<li class="chapter" data-level="4.4" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#dépendance-1"><i class="fa fa-check"></i><b>4.4</b> Dépendance</a></li>
+<li class="chapter" data-level="4.5" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#somme-de-variables-aléatoires"><i class="fa fa-check"></i><b>4.5</b> Somme de variables aléatoires</a></li>
+<li class="chapter" data-level="4.6" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#la-loi-normale-multivariée"><i class="fa fa-check"></i><b>4.6</b> La loi normale multivariée</a></li>
+<li class="chapter" data-level="4.7" data-path="variables-aléatoires-continues.html"><a href="variables-aléatoires-continues.html#lois-issues-de-la-loi-normale"><i class="fa fa-check"></i><b>4.7</b> Lois issues de la loi normale</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="convergence-de-variables-aleatoires.html"><a href="convergence-de-variables-aleatoires.html"><i class="fa fa-check"></i><b>5</b> Convergence de variables aléatoires</a><ul>
-<li class="chapter" data-level="5.1" data-path="convergence-de-variables-aleatoires.html"><a href="convergence-de-variables-aleatoires.html#modes-de-convergence"><i class="fa fa-check"></i><b>5.1</b> Modes de convergence</a></li>
-<li class="chapter" data-level="5.2" data-path="convergence-de-variables-aleatoires.html"><a href="convergence-de-variables-aleatoires.html#inegalites-en-probabilites"><i class="fa fa-check"></i><b>5.2</b> Inégalités en probabilités</a></li>
-<li class="chapter" data-level="5.3" data-path="convergence-de-variables-aleatoires.html"><a href="convergence-de-variables-aleatoires.html#applications"><i class="fa fa-check"></i><b>5.3</b> Applications</a></li>
+<li class="chapter" data-level="5" data-path="convergence-de-variables-aléatoires.html"><a href="convergence-de-variables-aléatoires.html"><i class="fa fa-check"></i><b>5</b> Convergence de variables aléatoires</a><ul>
+<li class="chapter" data-level="5.1" data-path="convergence-de-variables-aléatoires.html"><a href="convergence-de-variables-aléatoires.html#modes-de-convergence"><i class="fa fa-check"></i><b>5.1</b> Modes de convergence</a></li>
+<li class="chapter" data-level="5.2" data-path="convergence-de-variables-aléatoires.html"><a href="convergence-de-variables-aléatoires.html#inégalités-en-probabilités"><i class="fa fa-check"></i><b>5.2</b> Inégalités en probabilités</a></li>
+<li class="chapter" data-level="5.3" data-path="convergence-de-variables-aléatoires.html"><a href="convergence-de-variables-aléatoires.html#applications"><i class="fa fa-check"></i><b>5.3</b> Applications</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistiques</b></span></li>
+<li class="chapter" data-level="6" data-path="statistique-inférentielle.html"><a href="statistique-inférentielle.html"><i class="fa fa-check"></i><b>6</b> Statistique inférentielle</a><ul>
+<li class="chapter" data-level="6.1" data-path="statistique-inférentielle.html"><a href="statistique-inférentielle.html#modélisation-en-statistique"><i class="fa fa-check"></i><b>6.1</b> Modélisation en statistique</a></li>
+<li class="chapter" data-level="6.2" data-path="statistique-inférentielle.html"><a href="statistique-inférentielle.html#inférence-des-paramètres"><i class="fa fa-check"></i><b>6.2</b> Inférence des paramètres</a></li>
+<li class="chapter" data-level="6.3" data-path="statistique-inférentielle.html"><a href="statistique-inférentielle.html#tests-dhypothèses"><i class="fa fa-check"></i><b>6.3</b> Tests d’hypothèses</a></li>
+</ul></li>
 <li class="appendix"><span><b>Annexes</b></span></li>
 <li class="chapter" data-level="A" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html"><i class="fa fa-check"></i><b>A</b> Statistique descriptive</a><ul>
-<li class="chapter" data-level="A.1" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#distribution-univariee"><i class="fa fa-check"></i><b>A.1</b> Distribution univariée</a></li>
-<li class="chapter" data-level="A.2" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#distribution-bivariee"><i class="fa fa-check"></i><b>A.2</b> Distribution bivariée</a></li>
-<li class="chapter" data-level="A.3" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#series-temporelles"><i class="fa fa-check"></i><b>A.3</b> Séries temporelles</a></li>
+<li class="chapter" data-level="A.1" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#distribution-univariée"><i class="fa fa-check"></i><b>A.1</b> Distribution univariée</a></li>
+<li class="chapter" data-level="A.2" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#distribution-bivariée"><i class="fa fa-check"></i><b>A.2</b> Distribution bivariée</a></li>
+<li class="chapter" data-level="A.3" data-path="statistique-descriptive.html"><a href="statistique-descriptive.html#séries-temporelles"><i class="fa fa-check"></i><b>A.3</b> Séries temporelles</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="techniques-de-denombrement-en-probabilite.html"><a href="techniques-de-denombrement-en-probabilite.html"><i class="fa fa-check"></i><b>B</b> Techniques de dénombrement en probabilité</a></li>
-<li class="chapter" data-level="C" data-path="fonctions-indicatrices.html"><a href="fonctions-indicatrices.html"><i class="fa fa-check"></i><b>C</b> Fonctions indicatrices</a></li>
-<li class="chapter" data-level="D" data-path="espaces-lp.html"><a href="espaces-lp.html"><i class="fa fa-check"></i><b>D</b> Espaces <span class="math inline">\(L^p\)</span></a><ul>
-<li class="chapter" data-level="D.1" data-path="espaces-lp.html"><a href="espaces-lp.html#definitions"><i class="fa fa-check"></i><b>D.1</b> Définitions</a></li>
+<li class="chapter" data-level="B" data-path="techniques-de-dénombrement-en-probabilité.html"><a href="techniques-de-dénombrement-en-probabilité.html"><i class="fa fa-check"></i><b>B</b> Techniques de dénombrement en probabilité</a></li>
+<li class="chapter" data-level="C" data-path="espaces-lp.html"><a href="espaces-lp.html"><i class="fa fa-check"></i><b>C</b> Espaces <span class="math inline">\(L^p\)</span></a><ul>
+<li class="chapter" data-level="C.1" data-path="espaces-lp.html"><a href="espaces-lp.html#définitions"><i class="fa fa-check"></i><b>C.1</b> Définitions</a></li>
 </ul></li>
-<li class="chapter" data-level="E" data-path="echantillonage.html"><a href="echantillonage.html"><i class="fa fa-check"></i><b>E</b> Échantillonage</a></li>
+<li class="chapter" data-level="D" data-path="échantillonage.html"><a href="échantillonage.html"><i class="fa fa-check"></i><b>D</b> Échantillonage</a></li>
+<li class="chapter" data-level="E" data-path="fonctions-indicatrices.html"><a href="fonctions-indicatrices.html"><i class="fa fa-check"></i><b>E</b> Fonctions indicatrices</a></li>
 </ul>
 
       </nav>
@@ -129,10 +137,10 @@
 
             <section class="normal" id="section-">
 <div id="fonctions-indicatrices" class="section level1">
-<h1><span class="header-section-number">C</span> Fonctions indicatrices</h1>
+<h1><span class="header-section-number">E</span> Fonctions indicatrices</h1>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-89" class="theorem"><strong>Théorème C.1  </strong></span>L’application qui a un évènement <span class="math inline">\(A\)</span> associe la fonction indicatrice <span class="math display">\[
+<p><span id="thm:unnamed-chunk-89" class="theorem"><strong>Théorème E.1  </strong></span>L’application qui a un évènement <span class="math inline">\(A\)</span> associe la fonction indicatrice <span class="math display">\[
 \mathbf{1}_A : x \to  
 \left\lbrace
 \begin{array}{ccc}
@@ -145,23 +153,29 @@ Enfin, si <span class="math inline">\(A,B\)</span> sont deux évènements, <span
 </div>
 <p> Cet outil permet (entre autres) une démonstration immédiate de l’égalité de Poincaré (formule d’inclusion-exclusion) : Si <span class="math inline">\(B = \bigcup_{i=1}^n A_i\)</span>, <span class="math display">\[\mathbf{1}_B =1- \prod_{i=1}^n (1-\mathbf{1}_{A_i})\]</span> Et en développant puis en prenant l’espérance, il vient: <span class="math display">\[\mathbb{P}(B) = \sum_i \mathbb{P}(A_i) - \sum_{i&lt;j} \mathbb{P}(A_i \cap A_j)+  \ldots  \]</span></p>
 
+<!--  -->
+<!-- # Références {-} -->
+<!--  -->
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="techniques-de-denombrement-en-probabilite.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="espaces-lp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="échantillonage.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
