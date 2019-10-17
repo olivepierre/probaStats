@@ -7,7 +7,7 @@ En statistiques, on est confronté au problème suivant : observant les résulta
 Une approche courante consiste à proposer un modèle décrivant le processus observé, et à inférer les caractéristiques de ce modèle à partir des données observées. Quand ces caractéristiques sont paramétrées par un nombre fini de paramètres, on dit qu'il s'agit d'un *modèle paramétrique*, sinon il s'agit d'un *modèle non-paramétrique*.
 
 
-### Estimation ponctuelle
+## Estimation ponctuelle
 
 ```{definition}
 Soit $\theta$ une quantité à estimer. Un estimateur de $\theta$, noté $\hat{\theta}_n$ est une variable aléatoire
@@ -80,7 +80,7 @@ Alors
 
 
 
-### Intervalles de confiance
+## Intervalles de confiance
 
 ```{definition}
 Soit $\alpha \in ] 0 , 1 [$. Un *intervalle de confiance au niveau de confiance $1- \alpha$* pour un paramètre réel $\theta$ est un intervalle $\mathcal{I}_n = \left] a_n(X_1, \ldots, X_n) , b_n(X_1, \ldots, X_n) \right[$ tel que 
@@ -105,10 +105,27 @@ $$
   $$
 ```
 
-### Tests d'hypothèses
+## Tests d'hypothèses
 
 Lorsque l'on teste une hypothèse, on part d'une théorie par défaut, appelée *hypothèse nulle* $H_0$ qui est comparée à une *hypothèse alternative* $H_a$. On regarde si les données fournissent des éléments suffisamment convaincants pour *rejeter l'hypothèse nulle*. Sinon, *on ne rejette pas* l'hypothèse nulle.
 
-+ ch 10 + tests de Wald et exemple (compare moyenne) = illustration de stratégies de tests
+La plupart du temps, la validation de l'hypothèse équivaut l'appartenance à un région de rejet $R$ pour une certaine statistique : Si $X$ est une variable aléatoire, on rejette l'hypothèse nulle si $X \in R$, sinon on ne rejette pas l'hypothèse nulle.
+
+La région de rejet s'écrit $$ \lbrace x : T(x) >c \rbrace .$$
+$T$ s'appelle la *statistique de test* et $c$ est la valeur critique. Le problème consiste donc à trouver une statistique de test et une valeur critique.
+
+### Exemple : le test de Wald
+
+```{definition}
+Considérons le test de $\theta = \theta_0$ contre l'hypothèse alternative $\theta \not= \theta_0$.
+Supposons que $\hat{\theta}$ est asymptotiquement normal. Le test de Wald consiste à rejeter $H_0$ lorsque $|W| > z_{\alpha / 2}$ avec
+$W = \frac{\hat{\theta} - \theta_0}{\sqrt{\mathbb{V} \hat{\theta}}}.$
+```
+```{theorem}
+On a:
+  $$ \mathbb{P} (|W| > z_{\alpha / 2}) \to \alpha.$$
+```
+
+
 
 
